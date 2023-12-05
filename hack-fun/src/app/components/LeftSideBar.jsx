@@ -8,7 +8,7 @@ const LeftSideBar = () => {
           <Link href="/">
             <li>Home</li>
           </Link>
-          <Link href="/">
+          <Link href="/groupchat">
             <li>Community chat</li>
           </Link>
           <Link href="/teamchat">
