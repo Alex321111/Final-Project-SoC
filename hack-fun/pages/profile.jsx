@@ -7,7 +7,6 @@ const UserProfile = () => {
     <>
       {" "}
       <Header />
-      <img className="image" alt="logo" />;
       <LeftSideBar />
       <h1>You are in your profile page!</h1>
       <Footer />

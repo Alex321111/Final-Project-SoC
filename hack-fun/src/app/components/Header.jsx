@@ -1,18 +1,18 @@
 import Link from "next/link";
+import Avatar, { genConfig } from "react-nice-avatar";
 export default function Header() {
   return (
     <>
       <Link href="/profile">
+        {/* <Avatar style={{ width: "8rem", height: "8rem" }} /> */}
         <img
-          src="hack-fun/src/app/components/avatar-test.jpeg"
-          className="image"
-          alt="Profile-logo"
+          width="100px"
+          src="https://robohash.org/mycustomseed.png?set=set4"
+          alt="Cartoon Avatar"
         />
       </Link>
-      <img className="image" alt="SoC-logo" />
-      <img className="image" alt="Hackafun-logo" />
-
-      <h2>Welcome to Hack-a-fun!</h2>
+      {/* <img className="image" alt="SoC-logo" />
+      <img className="image" alt="Hackafun-logo" /> */}
     </>
   );
 }
