@@ -3,7 +3,7 @@ import Link from 'next/link';
 const BottomBar = () => {
   return (
     <nav className="bottom-bar">
-      <div className="rounded-[10px] bg-primary-500 ">
+      <div className="rounded-[10px]">
         <ul>
           <Link href="/">
             <li>Home</li>

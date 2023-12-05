@@ -6,8 +6,10 @@ const PastProjects = () => {
   return (
     <>
       {' '}
+      <Header />
       <LeftSideBar />
       <h1>You are in the past projects page !</h1>
+      <Footer />
     </>
   );
 };

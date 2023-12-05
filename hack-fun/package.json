@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dicebear/collection": "^7.0.1",
+    "@dicebear/core": "^7.0.1",
     "next": "^14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-nice-avatar": "^1.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",

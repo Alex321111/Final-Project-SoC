@@ -7,10 +7,10 @@ const TeamChat = () => {
   return (
     <>
       {' '}
-       <Header/>
+      <Header />
       <LeftSideBar />
       <h1>You are in the team chat page !</h1>
-      <Footer/>
+      <Footer />
     </>
   );
 };
