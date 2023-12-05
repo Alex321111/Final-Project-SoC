@@ -14,7 +14,7 @@ const LeftSideBar = () => {
           <Link href="/teamchat">
             <li>Team chat</li>
           </Link>
-          <Link href="/projectsubmission">
+          <Link href="/projectsubmissions">
             <li>Project submissions </li>
           </Link>
           <Link href="/pastprojects">
