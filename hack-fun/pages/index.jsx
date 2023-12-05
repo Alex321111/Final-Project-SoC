@@ -1,11 +1,11 @@
 import LeftSideBar from '../src/app/components/LeftSideBar';
-
+import HomeIntro from '../src/app/components/HomeIntro';
+import Homepage from '../src/app/components/HomeCard';
 const Home = () => {
   return (
     <div>
-      <LeftSideBar />
-      <h1>Welcome to the Home Page</h1>
-      <p>This is a test home component.</p>
+      <HomeIntro />
+      <Homepage />
     </div>
   );
 };
