@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const LeftSideBar = () => {
   return (
@@ -19,6 +19,9 @@ const LeftSideBar = () => {
           </Link>
           <Link href="/pastprojects">
             <li>Past projects </li>
+          </Link>
+          <Link href="/profile">
+            <li>Profile </li>
           </Link>
         </ul>
       </div>
