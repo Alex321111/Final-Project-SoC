@@ -26,9 +26,12 @@ const Home = () => {
           </section>
         </div>
       </div>
-
-      <div className="rounded-[10px] bg-primary-500 flex-center flex-col gap-1 p-2 transition">
+<div className="bottombar">
+      <div className="flex items-center justify-between gap-4"
+      style={{position: 'fixed', bottom: '0', width: '100%', backgroundColor: '#ff0377', display: "flex", justifyContent: "space-between", gap: "1rem", flexDirection: "row"}}>
         <BottomBar />
+
+      </div>
       </div>
     </div>
   );
