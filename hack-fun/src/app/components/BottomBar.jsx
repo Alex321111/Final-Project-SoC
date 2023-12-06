@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const BottomBar = () => {
   return (
@@ -25,4 +25,4 @@ const BottomBar = () => {
     </nav>
   );
 };
-export default LeftSideBar;
+export default BottomBar;

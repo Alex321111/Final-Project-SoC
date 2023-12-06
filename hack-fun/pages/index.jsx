@@ -1,9 +1,11 @@
-import LeftSideBar from '../src/app/components/LeftSideBar';
-import HomeIntro from '../src/app/components/HomeIntro';
-import HomeCard from '../src/app/components/HomeCard';
-import Footer from '../src/app/components/Footer';
-import Header from '../src/app/components/Header';
-import '../styles/globals.css';
+import LeftSideBar from "../src/app/components/LeftSideBar";
+import HomeIntro from "../src/app/components/HomeIntro";
+import HomeCard from "../src/app/components/HomeCard";
+import Footer from "../src/app/components/Footer";
+import Header from "../src/app/components/Header";
+import BottomBar from "../src/app/components/BottomBar";
+import "../styles/globals.css";
+
 const Home = () => {
   return (
     <div className="flex flex-col h-screen">
@@ -18,6 +20,11 @@ const Home = () => {
             <HomeIntro />
             <HomeCard />
           </section>
+        </div>
+      </div>
+      <div className="fixed bottom-0 w-full">
+        <div className="bottombar">
+          <BottomBar />
         </div>
       </div>
     </div>

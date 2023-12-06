@@ -24,3 +24,7 @@ body {
 .left-side-bar {
   @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
 }
+
+.bottombar {
+  @apply z-50 justify-between w-full sticky bottom-0 rounded-t-[20px] bg-dark-2 px-5 py-4 md:hidden fixed bottom-0 h-16;
+}
