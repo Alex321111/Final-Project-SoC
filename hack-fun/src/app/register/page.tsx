@@ -1,7 +1,6 @@
 //Register page tsx
 'use client'
 
-import { Input, Button } from '@supabase/ui'
 import supabase from '../utils/supabase'
 
 export default function Register() {
@@ -29,18 +28,26 @@ export default function Register() {
     }
   }
   return (
-    <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
-      <form className="w-full space-y-2" onSubmit={handleSubmit}>
-        <Input type="email" name="email" label="Email" />
-        <Input type="username" name="username" label="Username" />
-        <Input type="password" name="password" label="Password" />
-        <Button type="primary" htmlType="submit">
-          Sign up
-        </Button>
-      </form>
-    </div>
-  )
-}
+  <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
+    <form className="w-full space-y-2" onSubmit={handleSubmit}>
+      <label>
+        Email
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Username
+        <input type="text" name="username" />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" />
+      </label>
+      <button type="submit">
+        Sign up
+      </button>
+    </form>
+  </div>
+)
 
 
 // begin
