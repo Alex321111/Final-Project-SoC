@@ -41,3 +41,13 @@ export default function Register() {
     </div>
   )
 }
+
+
+// begin
+// --create a new profile when user signs up
+// insert into UserProfiles(id, created_at, name, username, email, about_me, linkedIn, github, roleDescriptor)
+// values(new.id, new.created_at, new.name, new.username, new.email, new.about_me, new.linkedIn, new.github, new.roleDescriptor);
+
+// return new;
+
+// end;
