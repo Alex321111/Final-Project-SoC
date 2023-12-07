@@ -1,7 +1,7 @@
 import LeftSideBar from '../src/app/components/LeftSideBar';
 import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
-
+import BottomBar from '../src/app/components/BottomBar';
 const UserProfile = () => {
   return (
     <>
@@ -10,6 +10,7 @@ const UserProfile = () => {
       <LeftSideBar />
       <h1>You are in your profile page!</h1>
       <Footer />
+      <BottomBar />
     </>
   );
 };

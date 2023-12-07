@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const LeftSideBar = () => {
   return (
-    <nav className="leftsidebar">
+    <nav className="leftsidebar h-full">
       <div className="flex flex-col gap-11">
         <ul>
           <Link href="/">

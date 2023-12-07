@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 * {
   @apply box-border list-none p-0 m-0 scroll-smooth;
 }
@@ -25,6 +12,12 @@ body {
   @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
 }
 
-.bottombar {
-  @apply  md:hidden fixed h-16;
-} 
+/* styles/globals.css */
+/* styles/globals.css */
+/* styles/globals.css */
+.bottom-bar {
+  @apply fixed h-16 bottom-0 w-full bg-pink-500 flex justify-between gap-4 md:hidden;
+}
+.bottom-bar li {
+  @apply px-2 py-2;
+}

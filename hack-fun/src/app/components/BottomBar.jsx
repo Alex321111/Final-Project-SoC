@@ -1,17 +1,17 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const BottomBar = () => {
   return (
-    <nav className="bottom-bar" style={{position: 'fixed', bottom: '0', width: '100%', backgroundColor: '#ff0377', display: "flex", justifyContent: "space-between", gap: "1rem", flexDirection: "row"}} >
+    <nav className="bottom-bar">
       <div className="rounded-[10px]">
-        <ul>
+        <ul className="flex items-center">
           <Link href="/">
             <li>Home</li>
           </Link>
           <Link href="/groupchat">
             <li>Community chat</li>
           </Link>
-          { <Link href="/teamchat">
+          <Link href="/teamchat">
             <li>Team chat</li>
           </Link>
           <Link href="/projectsubmission">
@@ -19,7 +19,7 @@ const BottomBar = () => {
           </Link>
           <Link href="/pastprojects">
             <li>Past projects </li>
-          </Link> }
+          </Link>
         </ul>
       </div>
     </nav>
