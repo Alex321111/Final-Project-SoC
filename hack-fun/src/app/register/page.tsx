@@ -48,7 +48,7 @@ export default function Register() {
     </form>
   </div>
 )
-
+  }
 
 // begin
 // --create a new profile when user signs up
