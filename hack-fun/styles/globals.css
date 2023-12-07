@@ -15,13 +15,16 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+* {
+  @apply box-border list-none p-0 m-0 scroll-smooth;
 }
+body {
+  @apply bg-dark-1 text-white min-h-screen font-inter;
+}
+.left-side-bar {
+  @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+}
+
+.bottombar {
+  @apply  md:hidden fixed h-16;
+} 
