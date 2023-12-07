@@ -6,24 +6,25 @@ import supabase from '../utils/supabase'
 export default function Register() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const { email, username, password } = Object.fromEntries(
+    //maybe add username to the const
+    const { email, password } = Object.fromEntries(
       new FormData(e.currentTarget)
     )
     if (
       typeof email === 'string' &&
-      typeof password === 'string' &&
-      typeof username === 'string'
+      typeof password === 'string'
+      // typeof username === 'string'
     ) {
       await supabase.auth.signUp(
         {
           email,
           password,
-        },
-        {
-          data: {
-            username,
-          },
         }
+        // raw user metadata{
+        //   data: {
+        //     username,
+        //   },
+        // }
       )
     }
   }
