@@ -12,19 +12,13 @@ export default function Register() {
     )
     if (
       typeof email === 'string' &&
-      typeof password === 'string' &&
-      typeof username === 'string'
+      typeof password === 'string'
     ) {
       await supabase.auth.signUp(
         {
           email,
           password,
         },
-        {
-          data: {
-            username,
-          },
-        }
       )
     }
   }
@@ -32,10 +26,9 @@ export default function Register() {
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
         <Input type="email" name="email" label="Email" />
-        <Input type="username" name="username" label="Username" />
         <Input type="password" name="password" label="Password" />
         <Button type="primary" htmlType="submit">
-          Sign up
+          Create my Profile
         </Button>
       </form>
     </div>
