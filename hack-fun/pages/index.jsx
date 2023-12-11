@@ -11,9 +11,9 @@ import '../styles/globals.css';
 const Home = () => {
   return (
     <>
-      <Header className="fixed flex-col top-0 left-0 w-full" />
+      {/* <Header className="fixed flex-col top-0 left-0 w-full" /> */}
       <div
-        className="flex  min-h-screen border border-solid border-green-300"
+        className="flex flex-col min-h-screen border border-solid border-green-300"
         style={{ minHeight: '100vh', border: '2px solid green' }}
       >
         <div className="flex flex-grow h-full">

@@ -6,16 +6,16 @@ const BottomBar = () => {
       <div className="rounded-[10px]">
         <ul className="flex items-center">
           <Link href="/">
-            <li>Home</li>
+            <li className="px-4">Home</li>
           </Link>
           <Link href="/groupchat">
-            <li>Community chat</li>
+            <li className="px-4">Community</li>
           </Link>
           <Link href="/teamchat">
-            <li>Team chat</li>
+            <li className="px-4">Team</li>
           </Link>
           <Link href="/projectsubmission">
-            <li>Project submissions </li>
+            <li className="px-4">Submissions</li>
           </Link>
           <Link href="/pastprojects">
             <li>Past projects </li>
