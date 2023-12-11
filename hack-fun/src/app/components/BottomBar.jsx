@@ -11,7 +11,7 @@ const BottomBar = () => {
           <Link href="/groupchat">
             <li>Community chat</li>
           </Link>
-          { <Link href="/teamchat">
+          <Link href="/teamchat">
             <li>Team chat</li>
           </Link>
           <Link href="/projectsubmission">
@@ -19,7 +19,7 @@ const BottomBar = () => {
           </Link>
           <Link href="/pastprojects">
             <li>Past projects </li>
-          </Link> }
+          </Link> 
         </ul>
       </div>
     </nav>
