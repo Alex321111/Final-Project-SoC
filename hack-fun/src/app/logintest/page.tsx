@@ -1,5 +1,5 @@
 'use client'
-
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { Input, Button } from '@supabase/ui';
 import supabase from '../utils/supabase';
@@ -17,8 +17,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       email,
       password,
     });
-  
-    if (data) {
+      if (data) {
       // Navigate to the profile page
       router.push('/profile');
     } else {
@@ -37,9 +36,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </Button>
         <p>Forgotten Password</p>
         <p>Here for the first time?</p>
-        <Button type="primary" htmlType="submit">
+          <Link href={'/register1'}>
+          <Button>
           Create an Account
-        </Button>
+          </Button>
+          </Link>
       </form>
     </div>
   );
