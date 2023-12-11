@@ -4,12 +4,14 @@
 import { Input, Button } from '@supabase/ui'
 import supabase from '../utils/supabase'
 
+
 export default function Register() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const { email, password, username, name, about_me, linkedin_link, github_link, role_description, skills} = Object.fromEntries(
+    const { email, password, username, name, about_me, linkedin_link, github_link, role_description, skills } = Object.fromEntries(
       new FormData(e.currentTarget)
     )
+
     if (
       typeof email === 'string' &&
       typeof password === 'string' &&
@@ -25,40 +27,35 @@ export default function Register() {
         {
           email,
           password,
-        },
-        {
-          data:
-          {username, name, about_me, linkedin_link, github_link, role_description, skills,}
-        }
-      )
-    }
+          options: {
+          data: {
+            username, name, about_me, linkedin_link, github_link, role_description, skills,
+          }},
+        })
+     }
   }
+
   return (
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
         <Input type="email" name="email" label="Email" />
         <Input type="password" name="password" label="Password" />
-        <Input type="username" name="username" label="Username" />
-        <Input type="Full Name" name="Full Name" label="Full Name" />
-        <Input type="About Me" name="About Me" label="About Me" />
-        <Input type="LinkedIn" name="LinkedIn" label="LinkedIn" />
-        <Input type="Github" name="Github" label="Github" />
-        <Input type="Role Description" name="Role Description" label="Are you a bootcamper, exbootcamper or a mentor?" />
-        <Input type="Skills" name="Skills" label="Please give us a brief summary of you skills and the tech you have experience with" />
+        <Input type="username" name="username" label="username" />
+        <Input type="name" name="name" label="Full Name" />
+        <Input type="about_me" name="about_me" label="About Me" />
+        <Input type="linkedin_link" name="linkedin_link" label="LinkedIn" />
+        <Input type="github_link" name="github_link" label="Github" />
+        <Input type="role_description" name="role_description" label="Are you a bootcamper, exbootcamper or a mentor?" />
+        <Input type="skills" name="skills" label="Please give us a brief summary of you skills and the tech you have experience with" />
         <Button type="primary" htmlType="submit">
-          Create my Profile
+          Log In
+        </Button>
+        <p>Forgotten Password</p>
+        <p>Here for the first time?</p>
+        <Button type="primary" htmlType="submit">
+          Create an Account
         </Button>
       </form>
     </div>
   )
 }
-
-
-// begin
-// --create a new profile when user signs up
-// insert into UserProfiles(id, created_at, name, username, email, about_me, linkedIn, github, roleDescriptor)
-// values(new.id, new.created_at, new.name, new.username, new.email, new.about_me, new.linkedIn, new.github, new.roleDescriptor);
-
-// return new;
-
-// end;
