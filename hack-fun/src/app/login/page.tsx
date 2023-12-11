@@ -7,7 +7,7 @@ import supabase from '../utils/supabase'
 export default function Register() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const { email, username, password } = Object.fromEntries(
+    const { email, password } = Object.fromEntries(
       new FormData(e.currentTarget)
     )
     if (

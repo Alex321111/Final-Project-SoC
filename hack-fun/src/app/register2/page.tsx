@@ -5,8 +5,68 @@ import { Input, Button } from '@supabase/ui'
 import supabase from '../utils/supabase'
 
 export default function Register2() {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+}
+      const { user } = supabase.auth.session(); // Get the current user
+      const { username, name, about_me, linkedin_link, github_link, role_description, skills } = Object.fromEntries(
+        new FormData(e.currentTarget)
+      )
+      if (
+        typeof username === 'string' &&
+        typeof name === 'string' &&
+        typeof about_me === 'string' &&
+        typeof linkedin_link === 'string' &&
+        typeof github_link === 'string' &&
+        typeof role_description === 'string' &&
+        typeof skills === 'string'
+      ) {
+        await supabase
+        .from('userprofiles')
+        .insert(
+          {
+            uuid: user.id, // Include the user's UUID
+            username,
+            name,
+            about_me,
+            linkedin_link,
+            github_link,
+            role_description,
+            skills,
+          },
+        )
+      }
+    }
+
+/*    e.preventDefault()
+const { username, name, about_me, linkedin_link, github_link, role_description, skills } = Object.fromEntries(
+  new FormData(e.currentTarget)
+)
+if (
+  typeof username === 'string' &&
+  typeof name === 'string' &&
+  typeof about_me === 'string' &&
+  typeof linkedin_link === 'string' &&
+  typeof github_link === 'string' &&
+  typeof role_description === 'string' &&
+  typeof skills === 'string'
+) {
+  await supabase
+    .from('user_profiles')
+    .insert([
+      {
+        username,
+        name,
+        about_me,
+        linkedin_link,
+        github_link,
+        role_description,
+        skills,
+      },
+    ])
+}
+}*/
+    /*e.preventDefault()
     const { username, name, about_me, linkedin_link, github_link, role_description, skills } = Object.fromEntries(
       new FormData(e.currentTarget)
     )
@@ -33,7 +93,10 @@ export default function Register2() {
         },
       )
     }
-  }
+  }*/
+
+
+
   return (
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
