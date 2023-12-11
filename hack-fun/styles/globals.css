@@ -26,5 +26,5 @@ body {
 }
 
 .bottombar {
-  @apply  md:hidden fixed h-16;
-} 
+  @apply md:hidden fixed h-16;
+}
