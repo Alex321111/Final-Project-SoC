@@ -3,6 +3,7 @@ import Image from 'next/image';
 import SocLogo from '../components/take-three.png';
 import Avatar from './Avatar.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   faHouse,
   faCircleStop,
@@ -19,27 +20,27 @@ const LeftSideBar = () => {
         <div className="flex flex-col items-center justfy-center">
           <Image className="soc-logo" width={80} height={80} src={SocLogo} />
         </div>
-        <ul className="py-4 px-6">
+        <ul className="py-4 px-3">
           <Link href="/">
-            <li className="py-3 hover:bg-primary-500  rounded-lg py-5">
+            <li className=" hover:bg-primary-500  rounded-lg py-1">
               {' '}
               <FontAwesomeIcon icon={faHouse} className="px-2" /> Home
             </li>
           </Link>
           <Link href="/groupchat">
-            <li className="py-3 hover:bg-primary-500  rounded-lg py-5">
+            <li className=" hover:bg-primary-500  rounded-lg py-5">
               <FontAwesomeIcon icon={faComments} className="px-2" />
               Community chat
             </li>
           </Link>
           <Link href="/teamchat">
-            <li className="py-3 hover:bg-primary-500  rounded-lg px-2">
+            <li className=" hover:bg-primary-500  rounded-lg px-1">
               <FontAwesomeIcon icon={faComments} className="px-2" />
               Team chat
             </li>
           </Link>
           <Link href="/projectsubmissions">
-            <li className="py-3 hover:bg-primary-500 rounded-lg px-2">
+            <li className="py-3 hover:bg-primary-500 rounded-lg px-1">
               <FontAwesomeIcon icon={faListCheck} className="px-2" />
               Project submissions
             </li>

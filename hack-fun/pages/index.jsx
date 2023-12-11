@@ -1,17 +1,17 @@
-// Home.js
 import LeftSideBar from '../src/app/components/LeftSideBar';
 import HomeIntro from '../src/app/components/HomeIntro';
 import HomeCard from '../src/app/components/HomeCard';
 import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
 import BottomBar from '../src/app/components/BottomBar';
+import Link from 'next/link';
+import Image from 'next/image';
 import '../styles/globals.css';
+import HackAFunLogo from '../src/app/components/hack-a-fun.png';
 
-// Home.js
 const Home = () => {
   return (
     <>
-      {/* <Header className="fixed flex-col top-0 left-0 w-full" /> */}
       <div
         className="flex flex-col min-h-screen border border-solid border-green-300"
         style={{ minHeight: '100vh', border: '2px solid green' }}
@@ -22,6 +22,15 @@ const Home = () => {
           </div>
           <div className="flex flex-col flex-grow">
             <section className="flex flex-col md:flex-grow">
+              <div className="flex flex-col items-center justfy-center">
+                <Image
+                  className="hack-logo"
+                  width={380}
+                  height={80}
+                  src={HackAFunLogo}
+                />
+              </div>
+
               <HomeIntro />
               <HomeCard />
             </section>
