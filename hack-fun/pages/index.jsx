@@ -28,6 +28,7 @@ const Home = () => {
                   width={380}
                   height={80}
                   src={HackAFunLogo}
+                  alt="hack-a-fun-logo"
                 />
               </div>
 
