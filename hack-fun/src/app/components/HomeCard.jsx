@@ -15,7 +15,7 @@ const HomeCard = () => {
         />
         <div class="p-6">
           <h2 class="font-bold mb-2 text-2xl text-purple-800">
-            Take part in this month's project
+            Take part in this month&aposs project
           </h2>
           <p class="text-purple-700 mb-2"></p>
           <a
