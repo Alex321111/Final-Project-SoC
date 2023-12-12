@@ -2,7 +2,7 @@
 'use client';
 import { createAvatar } from '@dicebear/core';
 import { lorelei } from '@dicebear/collection';
-import { Input, Button } from '@supabase/ui';
+
 import supabase from '../utils/supabase';
 
 export default function Register() {
