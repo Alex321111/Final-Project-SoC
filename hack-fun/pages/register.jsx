@@ -3,9 +3,8 @@ import { createClient } from '@supabase/supabase-js';
 import { supabase } from '@supabase/auth-ui-shared';
 import { createAvatar } from '@dicebear/core';
 import { avataaarsSprites } from '@dicebear/avatars-avataaars-sprites';
-// Function to create a new user
+import { lorelei } from '@dicebear/collection';
 async function CreateUser(email, password, userName, avatarURL) {
-  // Supabase configuration
   const supabaseUrl = 'https://zztdobkmxecvzbjqzxzq.supabase.co';
   const supabaseKey =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6dGRvYmtteGVjdnpianF6eHpxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDE3MTYzMDMsImV4cCI6MjAxNzI5MjMwM30.k8FV7aJnv1klyi7sPP23b8IVdwJ5LvkVIqqt_tpV3OE';
@@ -20,33 +19,32 @@ async function CreateUser(email, password, userName, avatarURL) {
     if (error) {
       console.error('Sign up error:', error.message);
     } else {
-      await createProfile(user.id, userName, avatarURL);
+      await createProfile(userName, avatarURL);
       console.log('User created successfully:', user);
     }
   } catch (error) {
     console.error('Error during user creation:', error.message);
   }
 }
-function generateRandomAvatar() {
-  const randomSeed = Math.random().toString();
-  const avatar = createAvatar(avataaarsSprites, {
-    seed: randomSeed,
-  });
+// function generateRandomAvatar() {
+//   const randomSeed = Math.random().toString();
+//   const avatar = createAvatar(avataaarsSprites, {
+//     seed: randomSeed,
+//   });
 
-  return avatar.toString();
-}
+//   return avatar.toString();
+// }
 
 async function createProfile(userId, userName, avatarURL) {
   try {
     await supabase.from('userProfiles').upsert(
       [
         {
-          id: userId,
           userName,
           avatarURL,
         },
-      ],
-      { onConflict: ['id'] }
+      ]
+      // { onConflict: ['id'] }
     );
   } catch (error) {
     console.error('Error creating user profile:', error.message);
@@ -54,11 +52,13 @@ async function createProfile(userId, userName, avatarURL) {
 }
 
 function RegisterPage() {
-  const avatarURL = generateRandomAvatar();
+  const avatarURL = createAvatar(lorelei, {
+    size: 108,
+  }).toDataUriSync();
 
   return (
     <div>
-      <h1>Register</h1>
+      <h1>Create an account</h1>
       <form
         onSubmit={async (event) => {
           event.preventDefault();
@@ -72,6 +72,8 @@ function RegisterPage() {
         <input id="email" type="email" />
         <label htmlFor="password">Password</label>
         <input id="password" type="password" />
+        <label htmlFor="password">User name</label>
+        <input id="userName" type="text" />
         <button type="submit">Register</button>
       </form>
     </div>
