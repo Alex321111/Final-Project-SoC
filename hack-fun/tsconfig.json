@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "pages /Home.jsxx"
-  ],
+, "pages/register.jsx"  ],
   "exclude": ["node_modules"]
 }
