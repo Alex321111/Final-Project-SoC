@@ -1,9 +1,19 @@
 //Register page tsx
 'use client';
+import adorableAvatars from 'adorable-avatars';
+import { useState } from 'react';
 import react from 'react';
 
 import supabase from '../src/app/utils/supabase';
 export default function Register() {
+  const generateRandomAvatar = () => {
+    const randomSeed = Math.floor(Math.random() * 1000);
+    return adorableAvatars.generateAvatar({
+      seed: randomSeed,
+      size: 150,
+    });
+  };
+  const [avatarUrl, setAvatarUrl] = useState(generateRandomAvatar());
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const {
@@ -48,6 +58,7 @@ export default function Register() {
   return (
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
+        <img src={avatarUrl} alt="User Avatar" />
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" />
 

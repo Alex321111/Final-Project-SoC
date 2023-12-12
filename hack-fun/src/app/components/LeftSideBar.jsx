@@ -3,6 +3,7 @@ import Image from 'next/image';
 import SocLogo from '../components/take-three.png';
 import Avatar from './Avatar.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CustomAvatar from './Avatar.jsx';
 
 import {
   faHouse,
@@ -57,6 +58,7 @@ const LeftSideBar = () => {
               Profile{' '}
             </li>
           </Link>
+          {/* <CustomAvatar className="avatar-side" /> */}
         </ul>
       </div>
     </nav>

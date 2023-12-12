@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import '../styles/globals.css';
 import HackAFunLogo from '../src/app/components/hack-a-fun.png';
-
+import CustomAvatar from '../src/app/components/Avatar';
 const Home = () => {
   return (
     <>
@@ -31,7 +31,9 @@ const Home = () => {
                   alt="hack-a-fun-logo"
                 />
               </div>
-
+              <div className="flex flex-col  justfy-end">
+                <CustomAvatar />
+              </div>
               <HomeIntro />
               <HomeCard />
             </section>
