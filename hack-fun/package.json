@@ -9,25 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@dicebear/avatars-avataaars-sprites": "^4.10.8",
     "@dicebear/collection": "^7.0.1",
     "@dicebear/core": "^7.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "dotenv": "^16.3.1",
+    "@supabase/auth-ui-react": "^0.4.6",
+    "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.39.0",
     "@tailwindcss/forms": "^0.5.7",
-    "dotenv": "^16.3.1",
     "next": "^14.0.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-nice-avatar": "^1.5.0"
+    "react-nice-avatar": "^1.5.0",
+    "react-router-dom": "^6.20.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",

@@ -9,6 +9,7 @@ const supabase = createClient(
 export default supabase;*/
 
 
+
 import { createClient } from '@supabase/supabase-js'
 import { Dispatch, SetStateAction} from 'react'
 
@@ -20,5 +21,6 @@ if (!url || !anonKey) {
 }
 
 const supabase = createClient(url, anonKey)
+
 
 export default supabase;
