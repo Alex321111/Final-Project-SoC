@@ -1,16 +1,24 @@
 //Register page tsx
-'use client'
+'use client';
 
-import { Input, Button } from '@supabase/ui'
-import supabase from '../utils/supabase'
-
+import { Input, Button } from '@supabase/ui';
+import supabase from '../utils/supabase';
 
 export default function Register() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const { email, password, username, name, about_me, linkedin_link, github_link, role_description, skills } = Object.fromEntries(
-      new FormData(e.currentTarget)
-    )
+    e.preventDefault();
+    const {
+      email,
+      password,
+      username,
+      name,
+      about_me,
+      linkedin_link,
+      github_link,
+      role_description,
+      skills,
+      avatar_url,
+    } = Object.fromEntries(new FormData(e.currentTarget));
 
     if (
       typeof email === 'string' &&
@@ -21,19 +29,27 @@ export default function Register() {
       typeof linkedin_link === 'string' &&
       typeof github_link === 'string' &&
       typeof role_description === 'string' &&
-      typeof skills === 'string'
+      typeof skills === 'string' &&
+      typeof avatar_url === 'string'
     ) {
-      await supabase.auth.signUp(
-        {
-          email,
-          password,
-          options: {
+      await supabase.auth.signUp({
+        email,
+        password,
+        options: {
           data: {
-            username, name, about_me, linkedin_link, github_link, role_description, skills,
-          }},
-        })
-     }
-  }
+            username,
+            name,
+            about_me,
+            linkedin_link,
+            github_link,
+            role_description,
+            skills,
+            avatar_url,
+          },
+        },
+      });
+    }
+  };
 
   return (
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
@@ -45,8 +61,16 @@ export default function Register() {
         <Input type="about_me" name="about_me" label="About Me" />
         <Input type="linkedin_link" name="linkedin_link" label="LinkedIn" />
         <Input type="github_link" name="github_link" label="Github" />
-        <Input type="role_description" name="role_description" label="Are you a bootcamper, exbootcamper or a mentor?" />
-        <Input type="skills" name="skills" label="Please give us a brief summary of you skills and the tech you have experience with" />
+        <Input
+          type="role_description"
+          name="role_description"
+          label="Are you a bootcamper, exbootcamper or a mentor?"
+        />
+        <Input
+          type="skills"
+          name="skills"
+          label="Please give us a brief summary of you skills and the tech you have experience with"
+        />
         <Button type="primary" htmlType="submit">
           Log In
         </Button>
@@ -57,5 +81,5 @@ export default function Register() {
         </Button>
       </form>
     </div>
-  )
+  );
 }
