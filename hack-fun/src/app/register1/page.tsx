@@ -1,6 +1,7 @@
 //Register page tsx
 'use client';
-
+import { createAvatar } from '@dicebear/core';
+import { lorelei } from '@dicebear/collection';
 import { Input, Button } from '@supabase/ui';
 import supabase from '../utils/supabase';
 
@@ -50,10 +51,13 @@ export default function Register() {
       });
     }
   };
-
+  const avatarURL = createAvatar(lorelei, {
+    size: 108,
+  }).toDataUriSync();
   return (
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
+        <img src={avatarURL} alt="User Avatar" />
         <Input type="email" name="email" label="Email" />
         <Input type="password" name="password" label="Password" />
         <Input type="username" name="username" label="username" />
