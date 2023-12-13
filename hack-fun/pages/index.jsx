@@ -8,21 +8,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import '../styles/globals.css';
 import HackAFunLogo from '../src/app/components/hack-a-fun.png';
-
+import CustomAvatar from '../src/app/components/Avatar';
 const Home = () => {
   return (
     <>
-      <div
-        className="flex flex-col min-h-screen border border-solid border-green-300"
-        style={{ minHeight: '100vh', border: '2px solid green' }}
-      >
+      <div className="flex flex-col min-h-screen ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">
             <LeftSideBar />
           </div>
           <div className="flex flex-col flex-grow">
             <section className="flex flex-col md:flex-grow">
-              <div className="flex flex-col items-center justfy-center">
+              <div
+                className="flex items-center  justify-right "
+                style={{ marginRight: '2rem' }}
+              >
                 <Image
                   className="hack-logo"
                   width={380}
@@ -30,6 +30,8 @@ const Home = () => {
                   src={HackAFunLogo}
                   alt="hack-a-fun-logo"
                 />
+                <div className="flex-grow"></div>
+                <CustomAvatar size={40} style={{ marginRight: '2rem' }} />
               </div>
 
               <HomeIntro />

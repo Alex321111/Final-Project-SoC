@@ -1,9 +1,25 @@
 //Register page tsx
 'use client';
+
+import { useState } from 'react';
 import react from 'react';
+import CustomAvatar from '../src/app/components/Avatar.jsx';
 
 import supabase from '../src/app/utils/supabase';
 export default function Register() {
+  const [avatarUrl, setAvatarUrl] = useState('');
+
+  const generateAvatarUrl = (username: string): string => {
+    const avatarUrl = 'https://source.boringavatars.com/';
+    const variant = 'beam';
+
+    const fullAvatarUrl = `${avatarUrl}${variant}/40/${encodeURIComponent(
+      username
+    )}`;
+
+    return fullAvatarUrl;
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const {
@@ -16,6 +32,7 @@ export default function Register() {
       github_link,
       role_description,
       skills,
+      avatar_image_url
     } = Object.fromEntries(new FormData(e.currentTarget));
     if (
       typeof email === 'string' &&
@@ -26,7 +43,8 @@ export default function Register() {
       typeof linkedin_link === 'string' &&
       typeof github_link === 'string' &&
       typeof role_description === 'string' &&
-      typeof skills === 'string'
+      typeof skills === 'string' &&
+      typeof avatar_image_url === 'string'
     ) {
       await supabase.auth.signUp({
         email,
@@ -40,14 +58,21 @@ export default function Register() {
             github_link,
             role_description,
             skills,
+            avatar_image_url,
           },
         },
       });
+    }
+    if (username === 'string') {
+      const userAvatarUrl = generateAvatarUrl(username);
+      setAvatarUrl(userAvatarUrl);
     }
   };
   return (
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
+        <CustomAvatar size={40} url={avatarUrl} />
+
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" />
 
