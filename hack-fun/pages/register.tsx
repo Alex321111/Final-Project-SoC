@@ -32,6 +32,7 @@ export default function Register() {
       github_link,
       role_description,
       skills,
+      avatar_image_url
     } = Object.fromEntries(new FormData(e.currentTarget));
     if (
       typeof email === 'string' &&
@@ -42,7 +43,8 @@ export default function Register() {
       typeof linkedin_link === 'string' &&
       typeof github_link === 'string' &&
       typeof role_description === 'string' &&
-      typeof skills === 'string'
+      typeof skills === 'string' &&
+      typeof avatar_image_url === 'string'
     ) {
       await supabase.auth.signUp({
         email,
@@ -56,6 +58,7 @@ export default function Register() {
             github_link,
             role_description,
             skills,
+            avatar_image_url,
           },
         },
       });
