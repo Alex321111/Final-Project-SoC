@@ -30,6 +30,11 @@ const config: Config = {
         'light-3': '#7878A3',
         'light-4': '#5C5C7B',
       },
+      spacing: {
+        '18': '4.5rem',
+        '15': '3.75rem',
+        '12': '3rem',
+      },
       screens: {
         xs: '480px',
       },

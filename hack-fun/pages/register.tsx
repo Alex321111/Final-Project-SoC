@@ -1,19 +1,25 @@
 //Register page tsx
 'use client';
-import adorableAvatars from 'adorable-avatars';
+
 import { useState } from 'react';
 import react from 'react';
+import CustomAvatar from '../src/app/components/Avatar.jsx';
 
 import supabase from '../src/app/utils/supabase';
 export default function Register() {
-  const generateRandomAvatar = () => {
-    const randomSeed = Math.floor(Math.random() * 1000);
-    return adorableAvatars.generateAvatar({
-      seed: randomSeed,
-      size: 150,
-    });
+  const [avatarUrl, setAvatarUrl] = useState('');
+
+  const generateAvatarUrl = (username: string): string => {
+    const avatarUrl = 'https://source.boringavatars.com/';
+    const variant = 'beam';
+
+    const fullAvatarUrl = `${avatarUrl}${variant}/40/${encodeURIComponent(
+      username
+    )}`;
+
+    return fullAvatarUrl;
   };
-  const [avatarUrl, setAvatarUrl] = useState(generateRandomAvatar());
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const {
@@ -54,11 +60,16 @@ export default function Register() {
         },
       });
     }
+    if (username === 'string') {
+      const userAvatarUrl = generateAvatarUrl(username);
+      setAvatarUrl(userAvatarUrl);
+    }
   };
   return (
     <div className="mx-auto flex min-h-screen max-w-2xl items-center px-4">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
-        <img src={avatarUrl} alt="User Avatar" />
+        <CustomAvatar size={40} url={avatarUrl} />
+
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" />
 

@@ -16,8 +16,8 @@ import {
 
 const LeftSideBar = () => {
   return (
-    <nav className="leftsidebar flex min-h-screen -mr-3.5">
-      <div className="flex flex-col gap-11">
+    <nav className="leftsidebar fixed flex-col flex min-h-screen -mr-3.5">
+      <div className="flex flex-col gap-11 flex-grow">
         <div className="flex flex-col items-center justfy-center">
           <Image className="soc-logo" width={80} height={80} src={SocLogo} />
         </div>
@@ -58,8 +58,14 @@ const LeftSideBar = () => {
               Profile{' '}
             </li>
           </Link>
-          {/* <CustomAvatar className="avatar-side" /> */}
         </ul>
+        <div
+          className="flex items-center"
+          style={{ marginTop: '50px', marginLeft: '1rem' }}
+        >
+          <CustomAvatar size={30} variant="beam" username="Mary" />
+          <span style={{ marginLeft: '1rem' }}>Julian</span>
+        </div>
       </div>
     </nav>
   );

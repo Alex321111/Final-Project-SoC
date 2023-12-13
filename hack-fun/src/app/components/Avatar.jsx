@@ -15,16 +15,17 @@ import PropTypes from 'prop-types';
 //   }, [styleName]);
 
 //   return <img src={avatarUrl} alt="Random avatar" />;
-// }
+//
+
 const CustomAvatar = ({
   variant = 'beam',
   size = 100,
-  username = 'Richard',
-  color1 = 'F0B300',
-  color2 = '11766D',
-  color3 = '410936',
-  color4 = 'E46F0A',
-  color5 = 'A40B54',
+  username = 'Mary',
+  color1 = '6E6CD5',
+  color2 = '61B4FB',
+  color3 = '847AEE',
+  color4 = '2A153B',
+  color5 = 'FFB238',
 }) => {
   const [avatarKey, setAvatarKey] = useState(0);
 
@@ -46,17 +47,6 @@ const CustomAvatar = ({
       />
     </div>
   );
-};
-
-CustomAvatar.propTypes = {
-  variant: PropTypes.string,
-  size: PropTypes.number,
-  username: PropTypes.string,
-  color1: PropTypes.string,
-  color2: PropTypes.string,
-  color3: PropTypes.string,
-  color4: PropTypes.string,
-  color5: PropTypes.string,
 };
 
 export default CustomAvatar;
