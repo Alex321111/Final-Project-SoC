@@ -1,39 +1,35 @@
-import LeftSideBar from '../src/app/components/LeftSideBar';
-import Footer from '../src/app/components/Footer';
-import Header from '../src/app/components/Header';
-import BottomBar from '../src/app/components/BottomBar';
-import { createClient } from '@supabase/supabase-js'
-import supabase from '../src/app/utils/supabase'
 
-async function getUserProfile(userId) {
-  const { data, error } = await supabase
-    .from('user_profiles')
-    .select('name, username')
-    .eq('userid', userId)
+import LeftSideBar from "../src/app/components/LeftSideBar";
+import Footer from "../src/app/components/Footer";
+import Header from "../src/app/components/Header";
+import BottomBar from "../src/app/components/BottomBar";
+import supabase from "../src/app/utils/supabase";
+import AccountForm from "../src/app/components/AccountForm";
+import { useState, useEffect } from "react";
 
-  if (error) {
-    console.error('Error: ', error)
-    return null
-  }
+export default function UserProfile() {
+	const [session, setSession] = useState(null);
 
-  return data
+	useEffect(() => {
+		const { data: authListener } = supabase.auth.onAuthStateChange(
+			(event, session) => {
+				setSession(session);
+			}
+		);
+
+		// Cleanup function
+		return () => {
+			authListener.unsubscribe();
+		};
+	}, []);
+
+	return (
+		<>
+			<Header />
+			<LeftSideBar />
+			{session && <AccountForm session={session} />}
+			<Footer />
+			<BottomBar />
+		</>
+	);
 }
-// Usage
-getUserProfile('').then(userProfile => {
-  console.log(userProfile)
-})
-
-const UserProfile = () => {
-  return (
-    <>
-      {' '}
-      <Header />
-      <LeftSideBar />
-      <h1>You are in your profile page!</h1>
-      <Footer />
-      <BottomBar />
-    </>
-  );
-};
-
-export default UserProfile;
