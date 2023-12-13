@@ -1,12 +1,29 @@
 import React from "react";
 import CustomAvatar from "../components/Avatar";
+import Image from 'next/image';
+//import '../styles/globals.css';
+import HackAFunLogo from '../components/hack-a-fun.png';
 
 function CreateAccountForm() {
   return (
-    <div className="bg-dark-2 max-w-4xl p-6 mx-auto rounded-md shadow-md mt-20">
-      <div>
-        <CustomAvatar size={40} />
-      </div>
+    <>
+      <div className="mr-6 mt-4">
+            <section className="flex flex-col md:flex-grow">
+              <div className="flex items-center  justify-center"              >
+                <Image
+                  className="hack-logo"
+                  width={680}
+                  height={120}
+                  src={HackAFunLogo}
+                  alt="hack-a-fun-logo"
+                />
+                </div>
+                </section>
+                </div>
+   
+
+    <div className="bg-dark-2 max-w-4xl p-6 mx-auto rounded-md shadow-md mt-5">
+           <div className= "flex justify-center"> <CustomAvatar size={50} /> </div>
       <form className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
         <div>
           <label htmlFor="email">Email</label>
@@ -94,7 +111,7 @@ function CreateAccountForm() {
         </div>
         <div>
           <label htmlFor="about_me"></label>
-          <textarea
+          <textarea maxlength="200"
             className="justify-start flex block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
             placeholder="Tell us about yourself (Max 200 characters)"
             id="about_me"
@@ -102,7 +119,7 @@ function CreateAccountForm() {
           ></textarea>
         </div>
         <div>
-          <textarea
+          <textarea maxlength="200"
             className="justify-start flex block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
             placeholder="Please give us a brief summary of your skills and the tech you have
             experience with (Max 200 characters)"
@@ -111,15 +128,16 @@ function CreateAccountForm() {
           ></textarea>
         </div>
       </form>
-      <div className="block flex-col justify-end mt-6 ">
+      <div className="block flex-col items-center justify-end mt-6 ">
         <button
-          class="rounded border-solid border-white border bg-blue-900 shadow-lg shadow-blue-500/50 py-1 px-3 ml-100 mt-4"
+          class="w-full rounded border-solid border-white border bg-blue-900 shadow-lg shadow-blue-500/50 py-1 px-3 mt-4"
           type="submit"
         >
           Create my account
         </button>
       </div>
     </div>
+    </>
   );
 }
 
