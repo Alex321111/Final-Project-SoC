@@ -4,7 +4,7 @@ import "../styles/globals.css";
 import { useState } from "react";
 import react from "react";
 import CustomAvatar from "../src/app/components/Avatar.jsx";
-import CreateAccountForm from "../src/app/components/AccountForm.jsx";
+import CreateAccountForm from "../src/app/components/RegisterForm.jsx";
 import supabase from "../src/app/utils/supabase";
 export default function Register() {
   const [avatarUrl, setAvatarUrl] = useState("");
