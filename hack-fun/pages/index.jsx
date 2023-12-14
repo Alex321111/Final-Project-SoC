@@ -7,7 +7,8 @@ import Image from 'next/image';
 import '../styles/globals.css';
 import HackAFunLogo from '../src/app/components/hack-a-fun.png';
 import { Auth } from '@supabase/auth-ui-react';
-
+import SocLogo from '../src/app/components/take-three.png';
+import Link from 'next/link';
 import {
   // Import predefined theme
   ThemeSupa,
@@ -53,20 +54,23 @@ function SignInWithEmail() {
 
   return (
     <>
-      <div className="mr-6 mt-4">
-        <section className="flex flex-col md:flex-grow">
-          <div className="flex items-center justify-center">
-            <Image
-              className="hack-logo"
-              width={680}
-              height={120}
-              src={HackAFunLogo}
-              alt="hack-a-fun-logo"
-            />
-          </div>
-        </section>
+      <div className=" mt-4">
+        <div className="flex flex-col items-center justfy-center">
+          <Image className="soc-logo" width={80} height={80} src={SocLogo} />
+        </div>
+        {/* <section className="flex flex-col md:flex-grow p-4"> */}
+        <div className="flex items-center justify-center">
+          <Image
+            className="hack-logo"
+            width={480}
+            height={120}
+            src={HackAFunLogo}
+            alt="hack-a-fun-logo"
+          />
+        </div>
+        {/* </section> */}
       </div>
-
+      {/* 
       <div className="bg-dark-2 max-w-4xl p-6 mx-auto rounded-md shadow-md mt-5">
         <div className="min-h-screen flex items-center justify-center">
           <div className="w-full max-w-md">
@@ -105,6 +109,46 @@ function SignInWithEmail() {
               Sign In
             </button>
           </div>
+        </div>
+      </div> */}
+      <div className="bg-dark-2 px-5 py-5 pb-5 m-10 rounded-lg shadow-lg">
+        <div className="flex justify-center">
+          {' '}
+          <form className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-dark-2 border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-dark-2 border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="password"
+                id="password"
+                name="password"
+              />
+            </div>
+            <div className="pb-4">
+              <button
+                class="w-full rounded border-solid border-white border bg-blue-900 shadow-lg shadow-blue-500/50 py-1 px-3 mt-4"
+                type="submit"
+              >
+                Log in
+              </button>
+            </div>
+          </form>
+        </div>
+        <div className="flex justify-center mt-6">
+          <Link href="/register">
+            <li className=" "> Create an account</li>
+          </Link>
         </div>
       </div>
     </>
