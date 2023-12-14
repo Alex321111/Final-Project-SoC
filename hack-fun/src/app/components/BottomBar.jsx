@@ -17,7 +17,7 @@ const BottomBar = () => {
     <nav className="bottom-bar">
       <div className="rounded-[10px]">
         <ul className="flex items-center justify-center  gap-10 ml-7 mt-4">
-          <Link href="/" className="hover:text-primary-500">
+          <Link href="/home" className="hover:text-primary-500">
             <FontAwesomeIcon
               icon={faHouse}
               size="lg"

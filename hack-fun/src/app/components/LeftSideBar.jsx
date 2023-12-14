@@ -22,7 +22,7 @@ const LeftSideBar = () => {
           <Image className="soc-logo" width={80} height={80} src={SocLogo} />
         </div>
         <ul className="py-4 px-3">
-          <Link href="/">
+          <Link href="/home">
             <li className=" hover:bg-primary-500  rounded-lg py-1">
               {' '}
               <FontAwesomeIcon icon={faHouse} className="px-2" /> Home
