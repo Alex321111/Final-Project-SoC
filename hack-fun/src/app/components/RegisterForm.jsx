@@ -27,10 +27,7 @@ function CreateAccountForm(props) {
           {' '}
           <CustomAvatar size={50} />{' '}
         </div>
-        <form
-          onSubmit={handleSubmit}
-          className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1"
-        >
+        <form className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
           <div>
             <label htmlFor="email">Email</label>
             <input
@@ -138,6 +135,7 @@ function CreateAccountForm(props) {
         </form>
         <div className="block flex-col items-center justify-end mt-6 ">
           <button
+            onClick={handleSubmit}
             class="w-full rounded border-solid border-white border bg-blue-900 shadow-lg shadow-blue-500/50 py-1 px-3 mt-4"
             type="submit"
           >
