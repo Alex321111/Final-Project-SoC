@@ -102,12 +102,19 @@ function AccountForm() {
 				onChange={handleSkillsChange}
 				placeholder="Skills"
 			/>
-			{/* <input
-				type="text" //Make dropdown with choices - edit Supabase table so that this column isn't unique
-				value={roleDescription}
-				onChange={handleRoleChange}
-				placeholder="Role"
-			/> */}
+			<div>
+				<label htmlFor="role_description">Role</label>
+				<select
+					className="block relative w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+					value={roleDescription}
+					onChange={handleRoleChange}
+					id="role_desciption"
+					name="role_desciption">
+					<option value="bootcamper">bootcamper</option>
+					<option value="exbootcamper">exbootcamper</option>
+					<option value="mentor">mentor</option>
+				</select>
+			</div>
 			<input
 				type="text"
 				value={github}
