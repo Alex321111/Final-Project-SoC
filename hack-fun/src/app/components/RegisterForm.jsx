@@ -4,7 +4,8 @@ import Image from 'next/image';
 //import '../styles/globals.css';
 import HackAFunLogo from '../components/hack-a-fun.png';
 
-function CreateAccountForm() {
+function CreateAccountForm(props) {
+  const { handleSubmit } = props;
   return (
     <>
       <div className="mr-6 mt-4">
@@ -26,7 +27,10 @@ function CreateAccountForm() {
           {' '}
           <CustomAvatar size={50} />{' '}
         </div>
-        <form className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1"
+        >
           <div>
             <label htmlFor="email">Email</label>
             <input
