@@ -71,7 +71,7 @@ export default function Register() {
 
   return (
     <div className="form-page">
-      <CreateAccountForm handleSignup={handleSubmit} />
+      <CreateAccountForm handleSubmit={handleSubmit} />
     </div>
   );
 }
