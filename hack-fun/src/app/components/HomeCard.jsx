@@ -14,9 +14,9 @@ const HomeCard = () => {
 			}
 		);
 		// Cleanup function
-		return () => {
-			authListener.unsubscribe();
-		};
+		// return () => {
+		// 	authListener.unsubscribe();
+		// };
 	}, []);
 	const handleSignUp = async () => {
 		if (user) {
