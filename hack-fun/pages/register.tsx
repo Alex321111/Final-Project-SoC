@@ -138,13 +138,13 @@ export default function Register() {
           <div>
             <label htmlFor="role_description">Role</label>
             <select className="block relative w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
-              <option type="text" id="role_desciption" name="role_desciption">
+                <option id="role_desciption">
                 bootcamper
               </option>
-              <option type="text" id="role_desciption" name="role_desciption">
+              <option  id="role_desciption">
                 exbootcamper
               </option>
-              <option type="text" id="role_desciption" name="role_desciption">
+              <option  id="role_desciption">
                 mentor
               </option>
             </select>
