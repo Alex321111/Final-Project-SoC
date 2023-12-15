@@ -36,20 +36,20 @@ function SignInWithEmail() {
   }, []);
   async function handleSignIn(e) {
     e.preventDefault();
-    // try {
-    const { user, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    try {
+      const { user, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    //   if (user) {
-    //     router.push('/home');
-    //   } else {
-    //     console.error(error);
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
+      if (user) {
+        router.push('/home');
+      } else {
+        console.error(error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
