@@ -133,12 +133,14 @@ function SignInWithEmail() {
                 type="password"
                 id="password"
                 name="password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="pb-4">
               <button
                 class="w-full rounded border-solid border-white border bg-blue-900 shadow-lg shadow-blue-500/50 py-1 px-3 mt-4"
                 type="submit"
+                onClick={handleSignIn}
               >
                 Log in
               </button>
