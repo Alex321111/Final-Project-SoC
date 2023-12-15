@@ -1,9 +1,16 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import SocLogo from '../components/take-three.png';
 import Avatar from './Avatar.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomAvatar from './Avatar.jsx';
+import { createClient } from '@supabase/supabase-js';
+import { useRouter } from 'next/navigation';
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_URL,
+  process.env.NEXT_PUBLIC_ANON_KEY
+);
 
 import {
   faHouse,
@@ -12,9 +19,23 @@ import {
   faListCheck,
   faDiagramProject,
   faUser,
+  faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 
 const LeftSideBar = () => {
+  const router = useRouter();
+  async function handleSignOut() {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) {
+        throw error;
+      }
+      console.log('Signed out successfully');
+      router.push('/');
+    } catch (error) {
+      console.log('Your connection timed out', error.message);
+    }
+  }
   return (
     <nav className="leftsidebar fixed flex-col flex min-h-screen -mr-3.5">
       <div className="flex flex-col gap-11 flex-grow">
@@ -65,6 +86,9 @@ const LeftSideBar = () => {
         >
           <CustomAvatar size={30} variant="beam" username="Mary" />
           <span style={{ marginLeft: '1rem' }}>Julian</span>
+        </div>
+        <div className="flex items-center justify-center mt-6">
+          <FontAwesomeIcon onClick={handleSignOut} icon={faRightFromBracket} />
         </div>
       </div>
     </nav>
