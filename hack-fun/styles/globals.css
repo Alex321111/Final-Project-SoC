@@ -13,8 +13,6 @@ body {
 }
 
 /* styles/globals.css */
-/* styles/globals.css */
-/* styles/globals.css */
 .bottom-bar {
   @apply fixed h-16 bottom-0 w-full bg-dark-2 flex justify-between gap-4 md:hidden;
 }
