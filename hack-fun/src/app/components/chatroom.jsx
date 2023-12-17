@@ -77,6 +77,8 @@ const ChatRoom = () => {
 // 	);
 // };
   
+//example 2
+
 	return (
 	  <div className="bg-dark-2  h-screen flex justify flex-col">
 		<div className="flex-1 overflow-y-auto p-4">
@@ -98,14 +100,14 @@ const ChatRoom = () => {
 			))}
 		  </ul>
 		</div>
-		<form onSubmit={handleNewMessage} className="p-4 bg-white">
+		<form onSubmit={handleNewMessage}>
 		  <div className="flex items-center justify-end">
 			<input
 			  type="text"
 			  value={newMessage}
 			  onChange={handleNewMessageChange}
 			  placeholder="Type your message here..."
-			  className="flex-1 justify-end border p-2 rounded-l focus:outline-none"
+			  className="flex-1 border p-2 rounded-l focus:outline-none"
 			/>
 			<button
 			  type="submit"
@@ -120,3 +122,4 @@ const ChatRoom = () => {
   };
   
   export default ChatRoom;
+
