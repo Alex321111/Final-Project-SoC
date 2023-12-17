@@ -31,37 +31,40 @@
 //     }
 //   };
 
-//   return (
-//     <div>
-//       <h1>Submit a New Project</h1>
+// return (
+//     <div className="bg-black text-white p-8">
+//       <h1 className="text-3xl mb-4">Submit a New Project</h1>
 //       <form onSubmit={handleSubmit}>
-//         <div>
-//           <label htmlFor="projectName">Project Name</label>
+//         <div className="mb-4">
+//           <label htmlFor="projectName" className="block text-sm font-semibold mb-1">
+//             Project Name
+//           </label>
 //           <input
 //             type="text"
 //             id="projectName"
+//             className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
 //             value={projectName}
 //             onChange={(e) => setProjectName(e.target.value)}
 //           />
 //         </div>
-//         <div>
-//           <label htmlFor="projectDescription">Project Description</label>
+//         <div className="mb-4">
+//           <label htmlFor="projectDescription" className="block text-sm font-semibold mb-1">
+//             Project Description
+//           </label>
 //           <textarea
 //             id="projectDescription"
+//             className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
 //             value={projectDescription}
 //             onChange={(e) => setProjectDescription(e.target.value)}
 //           />
 //         </div>
-//         <div>
-//           <label htmlFor="projectLink">Project Link</label>
-//           <input
-//             type="link"
-//             id="projectLink"
-//             value={projectLink}
-//             onChange={(e) => setProjectLink(e.target.value)}
-//           />
-//         </div>
-//         <button type="submit">Submit Project</button>
+//         {/* Add a container for project picture here, if needed */}
+//         <button
+//           type="submit"
+//           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+//         >
+//           Submit Project
+//         </button>
 //       </form>
 //     </div>
 //   );
