@@ -12,7 +12,7 @@ import {
   faRocket,
 } from '@fortawesome/free-solid-svg-icons';
 
-const BottomBar = () => {
+const BottomBar = ({ userName }) => {
   return (
     <nav className="bottom-bar">
       <div className="rounded-[10px]">
@@ -42,7 +42,7 @@ const BottomBar = () => {
               <CustomAvatar
                 size={25}
                 variant="beam"
-                username="Mary"
+                username={userName}
                 style={{ marginLeft: '15%' }}
               />
             </Link>

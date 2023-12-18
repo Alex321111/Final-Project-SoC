@@ -1,3 +1,4 @@
+'use client';
 import LeftSideBar from '../src/app/components/LeftSideBar';
 import HomeIntro from '../src/app/components/HomeIntro';
 import HomeCard from '../src/app/components/HomeCard';
@@ -9,20 +10,37 @@ import Image from 'next/image';
 import '../styles/globals.css';
 import HackAFunLogo from '../src/app/components/hack-a-fun.png';
 import CustomAvatar from '../src/app/components/Avatar';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import supabase from '../src/app/utils/supabase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CountDownTimer from '../src/app/components/Countdown';
 const Home = () => {
+  const [userName, setUserName] = useState('');
+  useEffect(() => {
+    const { authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        const currentUser = session?.user;
+        if (currentUser) {
+          setUserName(currentUser.user_metadata?.username);
+          console.log(userName);
+        } else {
+          setUserName('Guest');
+        }
+      }
+    );
+  }, []);
+
   return (
     <>
       <div className="flex flex-col min-h-screen ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">
-            <LeftSideBar />
+            <LeftSideBar userName={userName} />
           </div>
           <div className="flex flex-col flex-grow">
             <section className="flex flex-col md:flex-grow">
-              <div
-                className="flex items-center  justify-right "
-                style={{ marginRight: '2rem' }}
-              >
+              <div className="flex items-center justify-center ">
                 <Image
                   className="hack-logo"
                   width={380}
@@ -30,11 +48,9 @@ const Home = () => {
                   src={HackAFunLogo}
                   alt="hack-a-fun-logo"
                 />
-                <div className="flex-grow"></div>
-                <CustomAvatar size={40} style={{ marginRight: '2rem' }} />
               </div>
 
-              <HomeIntro />
+              <HomeIntro userName={userName} />
               <HomeCard />
             </section>
           </div>
@@ -42,7 +58,7 @@ const Home = () => {
       </div>
 
       <div className="bottom-bar-container">
-        <BottomBar />
+        <BottomBar userName={userName} />
       </div>
     </>
   );

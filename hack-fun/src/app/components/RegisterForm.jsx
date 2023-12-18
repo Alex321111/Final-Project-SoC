@@ -3,8 +3,14 @@ import CustomAvatar from './Avatar';
 import Image from 'next/image';
 //import '../styles/globals.css';
 import HackAFunLogo from '../components/hack-a-fun.png';
+import { useState } from 'react';
 
 function CreateAccountForm(props) {
+  const { userName, setUserName } = useState('');
+  handleUserName = () => {
+    setUserName(userName);
+    console.log(userName);
+  };
   const { handleSubmit } = props;
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -57,6 +63,8 @@ function CreateAccountForm(props) {
               type="text"
               id="username"
               name="username"
+              value={userName}
+              onChance={handleUserName}
             />
           </div>
           <div>
