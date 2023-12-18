@@ -6,7 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  
+  // purge: ["./src/pages/**/*.{js,jsx,ts,tsx}", './src/styles/**/*.css'],
   theme: {
     container: {
       center: true,
