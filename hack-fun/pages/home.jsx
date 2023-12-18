@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import supabase from '../src/app/utils/supabase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CountDownTimer from '../src/app/components/Countdown';
 const Home = () => {
   const [userName, setUserName] = useState('');
   useEffect(() => {
@@ -39,22 +40,13 @@ const Home = () => {
           </div>
           <div className="flex flex-col flex-grow">
             <section className="flex flex-col md:flex-grow">
-              <div
-                className="flex items-center  justify-right "
-                style={{ marginRight: '2rem' }}
-              >
+              <div className="flex items-center justify-center ">
                 <Image
                   className="hack-logo"
                   width={380}
                   height={80}
                   src={HackAFunLogo}
                   alt="hack-a-fun-logo"
-                />
-                <div className="flex-grow"></div>
-                <CustomAvatar
-                  size={40}
-                  style={{ marginRight: '2rem' }}
-                  username={userName}
                 />
               </div>
 
