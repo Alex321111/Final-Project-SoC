@@ -44,13 +44,13 @@ async function createTeams() {
 			console.log("Processing mentor:", mentor);
 			const { data: team, error } = await supabase
 				.from("all_teams")
-				.insert([{ user_id: mentor.id }])
+				.insert({ user_id: mentor.user_id })
 				.single();
 			if (error) {
 				console.error("Error inserting team: ", error);
 				return;
 			}
-			return team.id;
+			// return team.id;
 		})
 	);
 	// Assign non-mentors to teams in a round-robin fashion
