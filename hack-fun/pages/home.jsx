@@ -49,8 +49,8 @@ const Home = () => {
                   alt="hack-a-fun-logo"
                 />
               </div>
+<HomeIntro/>
 
-              <HomeIntro userName={userName} />
               <HomeCard />
             </section>
           </div>

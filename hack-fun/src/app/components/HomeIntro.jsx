@@ -1,25 +1,23 @@
 export default function HomeIntro({ userName }) {
   return (
-    <div
-      class="bg-dark-2  p-10 m-10 rounded-lg shadow-lg"
-      style={{
-        backgroundImage: `url(${'../components/header-background.jpeg'})`,
-      }}
-    >
-      <h2>Welcome to Hack-a-fun! {userName}</h2>
-      <br></br>
-      <p>
-        {' '}
-        Welcome to the Hack-a-fun app. You are about to take part in hackathons
-        with a difference! Here you will work with a randomised group of fellow
-        School of Code bootcampers, recent graduates and a mentor to solve a
-        Hackathon. New hackathons go live every 4 weeks. Sign up if you are
-        interested. You will then be assigned into a group. Your team will then
-        have access to the GitHub repo for that Hackathon. Once your team had
-        completed the hackathon you can Save it! Make a video about it! Add it
-        to your portfolio. Have fun and remember - it is all about working and
-        learning together!{' '}
-      </p>
-    </div>
+    // <div
+    //   class="bg-dark-2  p-4 m-5 rounded-lg shadow-lg"
+    // >
+   <section>
+  <div class="da relative w-400 flex min-h-screen flex-col justify-center overflow-hidden bg-dark-2">
+<div class="absolute inset-0 bg-center dark:bg-black"></div>
+<div class="group relative m-0 flex h-72 w-800 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+<div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+<img src="https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=2700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110" alt="" />
+</div>
+<div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+<h1 class="font-serif text-2xl font-bold text-white shadow-xl">Hackathon 2023</h1>
+<h1 class="text-sm font-light text-gray-200 shadow-xl">Develop a React SPA with a clear component structure</h1>
+</div>
+</div>
+</div>
+</section>
+    
+   
   );
 }
