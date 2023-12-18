@@ -100,13 +100,13 @@ const CustomAvatar = ({
 					height: `${size}px`,
 					fontFamily: "Impact, sans-serif",
 					boxShadow:
-						"0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 30px #FF0000, 0 0 40px #FF0000",
+						"0 0 10px #000080, 0 0 20px #000080, 0 0 30px #000080, 0 0 40px #000080",
 					background: "transparent",
 				}}>
 				<p
 					style={{
 						textShadow:
-							"0 0 5px #FF0000, 0 0 10px #FF0000 0 0 15px #FF0000, 0 0 20px #FF0000",
+							"0 0 5px #000080, 0 0 10px #000080 0 0 15px #000080, 0 0 20px #000080",
 					}}>
 					{points}
 				</p>
