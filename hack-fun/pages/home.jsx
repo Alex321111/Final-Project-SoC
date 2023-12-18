@@ -1,7 +1,7 @@
 'use client';
 import LeftSideBar from '../src/app/components/LeftSideBar';
 import HomeIntro from '../src/app/components/HomeIntro';
-import HomeCard from '../src/app/components/HomeCard';
+// import HomeCard from '../src/app/components/HomeCard';
 import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
 import BottomBar from '../src/app/components/BottomBar';
@@ -15,6 +15,10 @@ import { useState } from 'react';
 import supabase from '../src/app/utils/supabase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CountDownTimer from '../src/app/components/Countdown';
+import dynamic from 'next/dynamic';
+const HomeCard = dynamic(() => import('../src/app/components/HomeCard'), {
+  ssr: false,
+});
 const Home = () => {
   const [userName, setUserName] = useState('');
   useEffect(() => {
@@ -40,7 +44,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col flex-grow">
             <section className="flex flex-col md:flex-grow">
-              <div className="flex items-center justify-center ">
+              <div className="flex items-end justify-center ">
                 <Image
                   className="hack-logo"
                   width={380}
@@ -49,8 +53,8 @@ const Home = () => {
                   alt="hack-a-fun-logo"
                 />
               </div>
-<HomeIntro/>
 
+              <HomeIntro userName={userName} />
               <HomeCard />
             </section>
           </div>

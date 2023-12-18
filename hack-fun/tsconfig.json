@@ -27,8 +27,12 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "pages /Home.jsxx",
-    "pages/register.jsx"
-, "src/app/components/Avatar.jsx", "src/app/components/SubmitProject.jsx"  ],
+    "pages /home.jsx",
+    "pages/register.jsx",
+    "pages/teamchat.jsx",
+    "pages/groupchat.jsx",
+    "src/app/components/Avatar.jsx",
+    "src/app/components/SubmitProject.jsx"
+  ],
   "exclude": ["node_modules"]
 }
