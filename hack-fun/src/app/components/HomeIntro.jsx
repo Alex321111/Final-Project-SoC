@@ -1,7 +1,12 @@
-export default function HomeIntro() {
+export default function HomeIntro({ userName }) {
   return (
-    <div class="bg-dark-2  p-10 m-10 rounded-lg shadow-lg">
-      <h2>Welcome to Hack-a-fun!</h2>
+    <div
+      class="bg-dark-2  p-10 m-10 rounded-lg shadow-lg"
+      style={{
+        backgroundImage: `url(${'../components/header-background.jpeg'})`,
+      }}
+    >
+      <h2>Welcome to Hack-a-fun! {userName}</h2>
       <br></br>
       <p>
         {' '}
