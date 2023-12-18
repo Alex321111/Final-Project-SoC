@@ -38,20 +38,20 @@ const HomeCard = () => {
 					src={ProjectImg}
 				/>
 				<div className="p-6">
-					<h2 className="font-bold mb-2 text-2xl text-purple-800">
-						Take part in this month&aposs project
+					<h2 className="font-bold mb-2 text-2xl text-blue-800">
+						Take part in this months Hackathon
 					</h2>
-					<p className="text-purple-700 mb-2"></p>
+					<p className="text-blue-700 mb-2"></p>
 					<a
 						href="#"
-						className="text-purple-600 hover:text-purple-500 underline text-sm">
-						Read More :point_right:
+						className="text-blue-600 hover:text-blue-500 underline text-sm">
+						Read More
 					</a>
 				</div>
 				<button
 					onClick={handleSignUp}
-					className="text-purple-600 hover:text-purple-500 underline text-sm">
-					Sign Up :point_right:
+					class="w-full rounded border-solid border-white border bg-blue-900 shadow-lg shadow-blue-500/50 py-1 px-3 mt-4" type="submit">
+					Sign Up
 				</button>
 			</div>
 		</section>
