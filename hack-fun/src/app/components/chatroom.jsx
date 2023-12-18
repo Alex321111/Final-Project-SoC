@@ -34,9 +34,9 @@ const ChatRoom = () => {
 			)
 			.subscribe();
 
-		return () => {
-			supabase.removeSubscription(generalChat);
-		};
+		// return () => {
+		// 	supabase.removeSubscription(generalChat);
+		// };
 	}, []);
 
 	const fetchMessages = async () => {
