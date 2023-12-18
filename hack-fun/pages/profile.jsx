@@ -7,6 +7,7 @@ import AccountForm from '../src/app/components/AccountForm';
 import { useState, useEffect } from 'react';
 import '../styles/globals.css';
 
+
 export default function UserProfile() {
   const [session, setSession] = useState(null);
 
@@ -22,10 +23,18 @@ export default function UserProfile() {
     // };
   }, []);
 
+
   return (
     <>
       <LeftSideBar />
       {session && <AccountForm session={session} />}
+
+		// Cleanup function
+		// return () => {
+		// 	authListener.unsubscribe();
+		// };
+	}, []);
+
 
       <BottomBar />
     </>
