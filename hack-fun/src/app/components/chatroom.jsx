@@ -14,9 +14,9 @@ const ChatRoom = () => {
 			}
 		);
 
-		return () => {
-			authListener.unsubscribe();
-		};
+		// return () => {
+		// 	authListener.unsubscribe();
+		// };
 	}, []);
 
 	useEffect(() => {
