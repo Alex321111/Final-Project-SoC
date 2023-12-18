@@ -7,10 +7,8 @@ const SubmitProject = () => {
   return (
     <>
       {' '}
-      <Header />
+      {/* <Header /> */}
       <LeftSideBar />
-      <h1>You are in project submissions page !</h1>
-      <Footer />
     </>
   );
 };
