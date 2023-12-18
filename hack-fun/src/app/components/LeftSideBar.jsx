@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomAvatar from './Avatar.jsx';
 import { createClient } from '@supabase/supabase-js';
 import { useRouter } from 'next/navigation';
+import '../../../styles/globals.css';
 const supabase = createClient(
   process.env.NEXT_PUBLIC_URL,
   process.env.NEXT_PUBLIC_ANON_KEY
