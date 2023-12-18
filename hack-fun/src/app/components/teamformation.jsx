@@ -39,30 +39,20 @@ async function createTeams() {
 	// Use userId and roleDescription in your team forming functions
 	// });
 
-	// const { data: nonMentors, error: nonMentorsError } = await supabase.rpc(
-	// 	"get_nonmentors"
-	// );
-	// if (nonMentorsError) {
-	// 	console.error("Error fetching non-mentors: ", nonMentorsError);
-	// 	return;
-	// }
-	// console.log("Mentors:", mentors);
-	// console.log("Non-mentors:", nonMentors);
-
-	// const teamIds = await Promise.all(
-	// 	mentors.map(async (mentor) => {
-	// 		console.log("Processing mentor:", mentor);
-	// 		const { data: team, error } = await supabase
-	// 			.from("all_teams")
-	// 			.insert([{ user_id: mentor.id }]);
-	// 		console.log(mentor.id).single();
-	// 		if (error) {
-	// 			console.error("Error inserting team: ", error);
-	// 			return;
-	// 		}
-	// 		return team.id;
-	// 	})
-	// );
+	const teamIds = await Promise.all(
+		mentorsData.map(async (mentor) => {
+			console.log("Processing mentor:", mentor);
+			const { data: team, error } = await supabase
+				.from("all_teams")
+				.insert([{ user_id: mentor.id }])
+				.single();
+			if (error) {
+				console.error("Error inserting team: ", error);
+				return;
+			}
+			return team.id;
+		})
+	);
 	// Assign non-mentors to teams in a round-robin fashion
 	// for (let i = 0; i < nonMentors.length; i++) {
 	// 	const teamId = teamIds[i % teamIds.length];
