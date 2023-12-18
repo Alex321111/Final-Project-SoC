@@ -27,13 +27,7 @@ export default function UserProfile() {
   return (
     <>
       <LeftSideBar />
-      {session && <AccountForm session={session} />}
-
-		// Cleanup function
-		// return () => {
-		// 	authListener.unsubscribe();
-		// };
-	}, []);
+      {session && <AccountForm session={session} />}, [];
 
 
       <BottomBar />
