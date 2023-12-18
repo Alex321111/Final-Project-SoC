@@ -9,7 +9,7 @@ const GroupChat = () => {
 		<>
 			<Header />
 			<LeftSideBar />
-			<h1>You are in the group chat page !</h1>
+			<h1></h1>
 			<ChatRoom />
 			<Footer />
 		</>
