@@ -2,7 +2,8 @@ import LeftSideBar from '../src/app/components/LeftSideBar';
 import HomeIntro from '../src/app/components/HomeIntro';
 import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
-const ProjectSubmissions = () => {
+import MySubmitProjectPage from '../src/app/components/SubmitProjectPage';
+const SubmitProject = () => {
   return (
     <>
       {' '}
@@ -13,4 +14,4 @@ const ProjectSubmissions = () => {
     </>
   );
 };
-export default ProjectSubmissions;
+export default SubmitProject;
