@@ -3,6 +3,7 @@ import HomeIntro from '../src/app/components/HomeIntro';
 import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
 import ChatComponent from '../src/app/components/ChatComponent';
+import ChatRoom from '../src/app/components/chatroom';
 
 const GroupChat = () => {
   return (
@@ -10,7 +11,7 @@ const GroupChat = () => {
       <Header />
       <LeftSideBar />
       <h1></h1>
-      <ChatComponent />
+      <ChatRoom/>
       <Footer />
     </>
   );
