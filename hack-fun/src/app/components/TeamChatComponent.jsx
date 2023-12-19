@@ -224,7 +224,7 @@ const TeamChatRoom = () => {
     setNewMessage('');
   };
   return (
-    <div className="flex items-center justify-center mt-50px">
+    <div className="flex items-center justify-end”>">
       {messages.map((message, index) => (
         <p key={index}>{message.message_content}</p>
       ))}

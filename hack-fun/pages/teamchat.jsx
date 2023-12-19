@@ -3,6 +3,8 @@ import HomeIntro from '../src/app/components/HomeIntro';
 import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
 import TeamChatRoom from '../src/app/components/TeamChatComponent';
+import BottomBar from '../src/app/components/BottomBar';
+
 
 
 const TeamChat = () => {
@@ -10,10 +12,13 @@ const TeamChat = () => {
     <>
       {' '}
       <Header />
+      <div className= "left-side-bar, justify-left">
       <LeftSideBar />
-      <h1></h1>
+      </div>
       <TeamChatRoom />
-      <Footer />
+      <div className="bottom-bar-container">
+      <BottomBar />
+      </div>
     </>
   );
 };
