@@ -6,10 +6,9 @@ import supabase from '../src/app/utils/supabase';
 import AccountForm from '../src/app/components/AccountForm';
 import { useState, useEffect } from 'react';
 import '../styles/globals.css';
-import ProfilePage from '../src/app/components/profilePage';
+import ProfilePage from '../src/app/components/ProfilePage';
 
-
-export default function UserProfile({userName}) {
+export default function UserProfile({ userName }) {
   const [session, setSession] = useState(null);
 
   useEffect(() => {
@@ -24,17 +23,16 @@ export default function UserProfile({userName}) {
     // };
   }, []);
 
-
   return (
     <>
-    <div className="project-profile"></div>
-       <div className="flex flex-col min-h-screen ">
+      <div className="project-profile"></div>
+      <div className="flex flex-col min-h-screen ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">
             <LeftSideBar userName={userName} />
           </div>
           <section className="flex  items-center justify-center flex-col md:flex-grow">
-            <ProfilePage/>
+            <ProfilePage />
             {session && <AccountForm session={session} />}, [];
           </section>
         </div>
@@ -42,6 +40,6 @@ export default function UserProfile({userName}) {
       <div className="bottom-bar-container">
         <BottomBar userName={userName} />
       </div>
-     </>
+    </>
   );
 }

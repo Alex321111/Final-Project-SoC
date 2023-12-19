@@ -152,7 +152,7 @@ const HomeCard = () => {
 
           <div className="p-6 bg-dark-1 m-5 flex flex-col items-center justify-center w-180">
             <h2 className="font-bold mb-2 text-2xl text-p">
-              Sign up to take part in this month's project
+              Sign up to take part in this months project
             </h2>
             <Link href="/profile">Read more 🚀</Link>
           </div>
