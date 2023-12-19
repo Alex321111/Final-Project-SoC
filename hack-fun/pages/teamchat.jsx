@@ -9,7 +9,7 @@ const TeamChat = () => {
       {' '}
       <Header />
       <LeftSideBar />
-      <h1>You are in the team chat page !</h1>
+      <h1></h1>
       <Footer />
     </>
   );
