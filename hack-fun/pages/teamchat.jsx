@@ -12,7 +12,7 @@ const TeamChat = () => {
     <>
       {' '}
       <Header />
-      <div className= "left-side-bar, justify-left">
+      <div className= "left-side-bar">
       <LeftSideBar />
       </div>
       <TeamChatRoom />
