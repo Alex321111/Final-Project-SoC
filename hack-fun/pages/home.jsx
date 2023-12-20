@@ -19,6 +19,7 @@ import dynamic from 'next/dynamic';
 const HomeCard = dynamic(() => import('../src/app/components/HomeCard'), {
   ssr: false,
 });
+
 const Home = () => {
   const [userName, setUserName] = useState('');
   useEffect(() => {

@@ -141,7 +141,7 @@ const ChatRoom = () => {
                     <div
                       className={`flex items-center ${
                         message.sentByCurrentUser
-                          ? 'justify-end'
+                          ? 'justify-center'
                           : 'justify-start'
                       }`}
                     >
