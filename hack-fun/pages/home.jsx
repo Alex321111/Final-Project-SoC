@@ -16,11 +16,14 @@ import supabase from '../src/app/utils/supabase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CountDownTimer from '../src/app/components/Countdown';
 import dynamic from 'next/dynamic';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const HomeCard = dynamic(() => import('../src/app/components/HomeCard'), {
   ssr: false,
 });
 
 const Home = () => {
+  const notify = () => toast('Wow so easy!');
   const [userName, setUserName] = useState('');
   useEffect(() => {
     const { authListener } = supabase.auth.onAuthStateChange(
@@ -58,6 +61,10 @@ const Home = () => {
               <HomeIntro userName={userName} />
               <HomeCard />
             </section>
+            <button onClick={notify} className="p-7">
+              {' '}
+              Hello{' '}
+            </button>
           </div>
         </div>
       </div>
