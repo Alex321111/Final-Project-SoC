@@ -39,10 +39,25 @@ const ChatRoom = () => {
 		// };
 	}, []);
 
-	const fetchMessages = async () => {
-		const { data, error } = await supabase.from("general_chat").select("*");
+/*	const fetchMessages = async () => {
+		const { data, error } = await supabase
+		.from("general_chat")
+		.select("*");
 		if (error) console.error("Error fetching messages: ", error);
 		else setMessages(data);
+	};*/
+
+	const fetchMessages = async () => {
+		const { data, error } = await supabase
+			.from("general_chat")
+			.select("*")
+			.is("team_id", null); // Use the "is" operator to check for null values
+
+		if (error) {
+			console.error("Error fetching messages: ", error);
+		} else {
+			setMessages(data);
+		}
 	};
 
 	const handleNewMessageChange = (event) => {
