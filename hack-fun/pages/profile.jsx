@@ -6,8 +6,7 @@ import supabase from '../src/app/utils/supabase';
 import AccountForm from '../src/app/components/AccountForm';
 import { useState, useEffect } from 'react';
 import '../styles/globals.css';
-import ProfilePage from '../src/app/components/ProfilePage';
-import AvatarUnmodified from '../src/app/components/AvatarUnmodified';
+import ProfilePage from '../src/app/components/profilePage';
 
 export default function UserProfile({ userName }) {
   const [session, setSession] = useState(null);
