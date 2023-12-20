@@ -173,7 +173,7 @@ const ChatRoom = () => {
                     value={newMessage}
                     onChange={handleNewMessageChange}
                     placeholder="Type your message here..."
-                    className="flex-grow h-10 rounded px-3 text-sm"
+                    className=" text-black flex-grow h-10 rounded px-3 text-sm"
                   />
                   <button
                     type="submit"
