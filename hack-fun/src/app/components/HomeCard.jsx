@@ -22,6 +22,11 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const HomeCard = () => {
   const [user, setUser] = useState(null);
+  const [alert, setAlert] = useState(false);
+  function handleAlert () {
+  setAlert(true);  
+  }
+  handleAlert(true);
 
   const projectDeadline = '2023-12-31T23:59:59';
   useEffect(() => {
@@ -158,12 +163,19 @@ const HomeCard = () => {
           </div>
           <div className="flex items-center justify-center">
             <button
-              onClick={handleSignUp}
+              onClick={handleAlert}
               type="submit"
               className="w-[150px] bg-indigo-500 h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
             >
               Sign Up
             </button>
+            {alert && (
+        <Alert
+          message={`Get the coolest t-shirts from our brand new store, ${userName}!`}
+          type="indigo"
+          onClose={handleAlert}
+        />
+      )}
           </div>
         </div>
       </section>

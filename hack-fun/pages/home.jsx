@@ -16,8 +16,6 @@ import supabase from '../src/app/utils/supabase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CountDownTimer from '../src/app/components/Countdown';
 import dynamic from 'next/dynamic';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 const HomeCard = dynamic(() => import('../src/app/components/HomeCard'), {
   ssr: false,
 });
