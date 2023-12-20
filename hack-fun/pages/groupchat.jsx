@@ -15,7 +15,7 @@ const GroupChat = ({ userName }) => {
       <h1></h1>
       <ChatRoom/>
       <Footer />
-/*
+
       <div className="flex flex-col min-h-screen ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">
@@ -37,15 +37,4 @@ const GroupChat = ({ userName }) => {
 };
 
 export default GroupChat;
-{
-  /* <div className="flex flex-col flex-grow w-full">
-        <section className="flex flex-col flex-grow w-full max-w-xl bg-dark-2 shadow-xl rounded-lg overflow-hidden">
-          <ChatComponent />
-        </section>
 
-        <div className="bottom-bar-container flex-shrink-0">
-          <BottomBar userName={userName} />
-        </div>
-      </div>
-    </div> */
-}
