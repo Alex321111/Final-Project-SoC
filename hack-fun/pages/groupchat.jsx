@@ -2,8 +2,6 @@ import LeftSideBar from '../src/app/components/LeftSideBar';
 import HomeIntro from '../src/app/components/HomeIntro';
 import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
-
-import ChatComponent from '../src/app/components/ChatComponent';
 import ChatRoom from '../src/app/components/chatroom';
 
 
@@ -25,7 +23,7 @@ const GroupChat = ({ userName }) => {
           </div>
 
           <section className="flex  items-center justify-center flex-col md:flex-grow">
-            <Chatroom />
+            <ChatRoom />
           </section>
         </div>
       </div>
