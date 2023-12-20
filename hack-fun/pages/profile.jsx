@@ -7,6 +7,7 @@ import AccountForm from '../src/app/components/AccountForm';
 import { useState, useEffect } from 'react';
 import '../styles/globals.css';
 import ProfilePage from '../src/app/components/ProfilePage';
+import AvatarUnmodified from '../src/app/components/AvatarUnmodified';
 
 export default function UserProfile({ userName }) {
   const [session, setSession] = useState(null);
@@ -33,7 +34,7 @@ export default function UserProfile({ userName }) {
           </div>
           <section className="flex  items-center justify-center flex-col md:flex-grow">
             <ProfilePage />
-            {session && <AccountForm session={session} />}, [];
+            {session && <AccountForm session={session} />}
           </section>
         </div>
       </div>
