@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import supabase from "../utils/supabase";
-
+import React, { useState, useEffect } from 'react';
+import supabase from '../utils/supabase';
+import CustomAvatar from './Avatar';
 const ChatRoom = () => {
+
 	const [user, setUser] = useState(null);
 	const [newMessage, setNewMessage] = useState("");
 	const [messages, setMessages] = useState([]);
@@ -150,6 +151,7 @@ const ChatRoom = () => {
 			</form>
 		</div>
 	);
+
 };
 
 export default ChatRoom;
