@@ -1,11 +1,11 @@
-import LeftSideBar from '../src/app/components/LeftSideBar';
-import HomeIntro from '../src/app/components/HomeIntro';
-import Footer from '../src/app/components/Footer';
-import Header from '../src/app/components/Header';
-import BottomBar from '../src/app/components/BottomBar';
-import ProjectCard from '../src/app/components/ProjectCard';
-const PastProjects = ({userName}) => {
-// comment test
+import LeftSideBar from "../src/app/components/LeftSideBar";
+import HomeIntro from "../src/app/components/HomeIntro";
+import Footer from "../src/app/components/Footer";
+import Header from "../src/app/components/Header";
+import BottomBar from "../src/app/components/BottomBar";
+import ProjectCard from "../src/app/components/ProjectCard";
+const PastProjects = ({ userName }) => {
+  // comment test
   return (
     <>
       <div className="flex flex-col min-h-screen ">
@@ -14,14 +14,11 @@ const PastProjects = ({userName}) => {
             <LeftSideBar userName={userName} />
           </div>
 
-
-
-
-          <section className="flex  items-center justify-center flex-col md:flex-grow">
-            <ProjectCard/>
-          </section>
-          <section className="flex  items-center justify-center flex-col md:flex-grow">
-            <ProjectCard/>
+          {/* <section className="flex items-center justify-center flex-col md:flex-grow">
+            <ProjectCard />
+          </section> */}
+          <section className="flex items-center justify-center flex-col md:flex-grow">
+            <ProjectCard />
           </section>
         </div>
       </div>
