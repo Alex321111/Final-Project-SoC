@@ -15,7 +15,7 @@ const GroupChat = ({ userName }) => {
           </div>
 
           <section className="flex  items-center justify-center flex-col md:flex-grow">
-            <ChatRoom />
+            <ChatRoom userName={userName} />
           </section>
         </div>
       </div>

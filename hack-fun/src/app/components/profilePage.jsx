@@ -1,7 +1,7 @@
-import CustomAvatar from "./Avatar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithubAlt } from "@fortawesome/free-solid-svg-icons";
-import AvatarUnmodified from "../components/AvatarUnmodified";
+import CustomAvatar from './Avatar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubAlt } from '@fortawesome/free-solid-svg-icons';
+import AvatarUnmodified from '../components/AvatarUnmodified';
 import {
   faHouse,
   faCircleStop,
@@ -12,7 +12,7 @@ import {
   faRightFromBracket,
   faPowerOff,
   faGithub,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 export default function ProfilePage({ userName }) {
   return (
     <div className="w-full bg-dark-2 lg:w-10/12 px-4 py- lg:order-3 lg:text-right lg:self-center ">

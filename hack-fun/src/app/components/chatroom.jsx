@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import supabase from "../utils/supabase";
 import CustomAvatar from "./Avatar";
 import AvatarUnmodified from "./AvatarUnmodified";
-const ChatRoom = () => {
+const ChatRoom = ({ username }) => {
   const [user, setUser] = useState(null);
   const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState([]);
