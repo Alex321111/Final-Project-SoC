@@ -11,7 +11,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 .left-side-bar {
-  @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+  @apply hidden md:flex px-4 py-0 flex-col m-0 min-h-screen justify-between min-w-[270px] bg-dark-2;
 }
 
 /* styles/globals.css */
