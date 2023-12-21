@@ -43,7 +43,7 @@ const LeftSideBar = ({ userName }) => {
     <nav className="hidden md:flex  px-8  bg-dark-2 fixed flex-col  min-w-[270px] min-h-screen -mr-3.5">
       <div className="flex flex-col gap-11 flex-grow">
         <div className="flex flex-col items-center justfy-center">
-          <a href="https://www.schoolofcode.co.uk/">
+          <a href="https://www.schoolofcode.co.uk/" alt="school-of-code-logo">
             <Image className="soc-logo" width={80} height={80} src={SocLogo} />
           </a>
         </div>
