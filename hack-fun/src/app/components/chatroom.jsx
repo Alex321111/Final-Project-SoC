@@ -51,8 +51,8 @@ const ChatRoom = () => {
 	const fetchMessages = async () => {
 		const { data, error } = await supabase
 			.from("general_chat")
-			.select("*")
-			.is("team_id", null); // Use the "is" operator to check for null values
+			.select("*, user_profiles: user_id(username)")
+			.is("team_id", null);
 
 		if (error) {
 			console.error("Error fetching messages: ", error);
@@ -124,9 +124,13 @@ const ChatRoom = () => {
 									}`}>
 									{!message.sentByCurrentUser && (
 										<div className="flex items-center">
-											<AvatarUnmodified size={30} />
-											<span className="text-gray-600 ml-2">
-												{message.username}
+											<CustomAvatar
+												size={30}
+												variant="beam"
+												username={message.user_profiles.username}
+											/>
+											<span className="text-white-600 ml-2">
+												{message.user_profiles.username}
 											</span>
 										</div>
 									)}
