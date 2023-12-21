@@ -14,14 +14,14 @@ import {
 
 const BottomBar = ({ userName }) => {
   return (
-    <nav className="bottom-bar">
+    <nav className="bottom-bar pb-5">
       <div className="rounded-[10px]">
         <ul className="flex items-center justify-center  gap-10 ml-7 mt-4">
-          <Link href="/home" className="hover:text-primary-500">
+          <Link href="/home" className="hover:text-indigo-500">
             <FontAwesomeIcon
               icon={faHouse}
               size="lg"
-              className="px-2 hover-text "
+              className="px-2 hover-text mb-3 "
             />
           </Link>
           <Link href="/groupchat" className="hover:text-primary-500">
