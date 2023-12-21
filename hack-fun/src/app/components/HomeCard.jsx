@@ -1,12 +1,12 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import ProjectImg from '../components/project-brief.png';
-import SocLogo from '../components/take-three.png';
-import Link from 'next/link';
-import Image from 'next/image';
-import supabase from '../utils/supabase';
-import Alert from '../components/Alert';
-import HomeIntro from './HomeIntro';
+"use client";
+import React, { useState, useEffect } from "react";
+import ProjectImg from "../components/project-brief.png";
+import SocLogo from "../components/take-three.png";
+import Link from "next/link";
+import Image from "next/image";
+import supabase from "../utils/supabase";
+import Alert from "../components/Alert";
+import HomeIntro from "./HomeIntro";
 
 import {
   faHouse,
@@ -18,8 +18,8 @@ import {
   faRightFromBracket,
   faPowerOff,
   faLink,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const HomeCard = () => {
   const [user, setUser] = useState(null);
   const [alert, setAlert] = useState(false);
@@ -29,7 +29,7 @@ const HomeCard = () => {
   function handleCloseAlert() {
     setAlert(false);
   }
-  const projectDeadline = '2023-12-31T23:59:59';
+  const projectDeadline = "2023-12-31T23:59:59";
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
@@ -46,11 +46,11 @@ const HomeCard = () => {
   const handleSignUp = async () => {
     if (user) {
       const { data, error } = await supabase
-        .from('hackathon_sign_up')
-        .insert([{ user_id: user.id, brief_name: 'Test Brief' }]);
+        .from("hackathon_sign_up")
+        .insert([{ user_id: user.id, brief_name: "Test Brief" }]);
       if (error) console.error(error);
     } else {
-      console.error('User is not authenticated');
+      console.error("User is not authenticated");
     }
     setAlert(true);
   };
@@ -58,7 +58,7 @@ const HomeCard = () => {
   function CountDownTimer() {
     function calculateTimeLeft() {
       const now = new Date(
-        new Date().toLocaleString('en-US', { timeZone: 'Europe/London' })
+        new Date().toLocaleString("en-US", { timeZone: "Europe/London" })
       );
       const difference = new Date(projectDeadline) - now;
 
@@ -110,7 +110,7 @@ const HomeCard = () => {
                             <div className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 -right-[6px] rounded-full bg-[#191A24]"></div>
                           </div>
                           <span className="text-[#8486A9] text-xs sm:text-2xl text-center capitalize">
-                            {timeLeft?.days == 1 ? 'Day' : 'Days'}
+                            {timeLeft?.days == 1 ? "Day" : "Days"}
                           </span>
                         </div>
                         <div className="flex flex-col gap-5 relative">
@@ -122,7 +122,7 @@ const HomeCard = () => {
                             <div className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 -right-[6px] rounded-full bg-[#191A24]"></div>
                           </div>
                           <span className="text-[#8486A9] text-xs sm:text-2xl text-center font-medium">
-                            {timeLeft?.hours == 1 ? 'Hour' : 'Hours'}
+                            {timeLeft?.hours == 1 ? "Hour" : "Hours"}
                           </span>
                         </div>
                         <div className="flex flex-col gap-5 relative">
@@ -134,7 +134,7 @@ const HomeCard = () => {
                             <div className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 -right-[6px] rounded-full bg-[#191A24]"></div>
                           </div>
                           <span className="text-[#8486A9] text-xs sm:text-2xl text-center capitalize">
-                            {timeLeft?.minutes == 1 ? 'Minute' : 'Minutes'}
+                            {timeLeft?.minutes == 1 ? "Minute" : "Minutes"}
                           </span>
                         </div>
                         <div className="flex flex-col gap-5 relative">
@@ -146,7 +146,7 @@ const HomeCard = () => {
                             <div className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 -right-[6px] rounded-full bg-[#191A24]"></div>
                           </div>
                           <span className="text-[#8486A9] text-xs sm:text-2xl text-center capitalize">
-                            {timeLeft?.seconds == 1 ? 'Second' : 'Seconds'}
+                            {timeLeft?.seconds == 1 ? "Second" : "Seconds"}
                           </span>
                         </div>
                       </div>
@@ -158,10 +158,15 @@ const HomeCard = () => {
           </div>
 
           <div className="p-6 bg-dark-1 m-5 flex flex-col items-center justify-center w-180">
-            <h2 className="font-bold mb-2 text-2xl text-p">
+            <h2 className="font-bold mb-2 text-2xl text-p text-center">
               Sign up to take part in this months project
             </h2>
-            <Link href="/profile">Read more 🚀</Link>
+            <Link
+              href="/profile"
+              className="text-indigo-500 text-center hover:text-yellow-500"
+            >
+              Read more 🚀
+            </Link>
           </div>
           <div className="flex items-center justify-center">
             <button
