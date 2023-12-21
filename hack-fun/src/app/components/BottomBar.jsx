@@ -1,7 +1,7 @@
-import Link from "next/link";
-import CustomAvatar from "./Avatar.jsx";
-import AvatarUnmodified from "./AvatarUnmodified.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from 'next/link';
+import CustomAvatar from './Avatar.jsx';
+import AvatarUnmodified from './AvatarUnmodified.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouse,
   faCircleStop,
@@ -11,13 +11,13 @@ import {
   faUser,
   faUsers,
   faRocket,
-} from "@fortawesome/free-solid-svg-icons";
-import CustomAvatarUnmodified from "./AvatarUnmodified.jsx";
+} from '@fortawesome/free-solid-svg-icons';
+import CustomAvatarUnmodified from './AvatarUnmodified.jsx';
 
 const BottomBar = ({ userName }) => {
   return (
-    <nav className="bottom-bar pb-5">
-      <div className="rounded-[10px] border-grey-500 border-t-2">
+    <nav className="bottom-bar pb-5 w-full">
+      <div className="rounded-[10px] border-grey-500 border-t-2 w-full">
         <ul className="flex items-center justify-center gap-7 ml-7 mt-4">
           <Link href="/home" className="hover:text-indigo-500">
             <FontAwesomeIcon

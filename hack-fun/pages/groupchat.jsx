@@ -29,7 +29,6 @@ const GroupChat = () => {
           <div className="left-side-bar">
             <LeftSideBar userName={userName} />
           </div>
-
           <section className="flex  items-center justify-center flex-col md:flex-grow">
             <ChatRoom userName={userName} />
           </section>
