@@ -27,9 +27,6 @@ function SignInWithEmail() {
 		const { data: authListener } = supabase.auth.onAuthStateChange(
 			(event, session) => {
 				if (event === "SIGNED_IN") {
-					if (router.pathname !== "/home") {
-						return;
-					}
 					router.push("/home");
 				} else {
 					router.push("/");
@@ -46,7 +43,7 @@ function SignInWithEmail() {
 			});
 
 			if (user) {
-				router.push("/home");
+				// router.push("/home");
 			} else {
 				console.error(error);
 			}
