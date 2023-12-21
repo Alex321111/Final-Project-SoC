@@ -23,10 +23,12 @@ function SignInWithEmail() {
 	const router = useRouter();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
 	useEffect(() => {
 		const { data: authListener } = supabase.auth.onAuthStateChange(
 			(event, session) => {
 				if (event === "SIGNED_IN") {
+					sessionStorage.setItem("justLoggedIn", "true"); // Set the flag
 					router.push("/home");
 				} else {
 					router.push("/");
