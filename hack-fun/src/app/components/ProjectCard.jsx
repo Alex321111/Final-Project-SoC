@@ -88,7 +88,7 @@ export default function ProjectCard({ userName }) {
               alt=""
             />
           </a>
-          <div className="p-5">
+          <div className="p-5 sm:pb-20">
             <a href="https://docs.google.com/document/d/e/2PACX-1vRa4v7rAZWZpBs0R_kH_mPpPl788cY9wDILKJkJL6ieKrU2jtsK_9demcudSFDFSU5uAQ30TEM9ENt8/pub">
               <h5 className="text-blue-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">
                 Welcome to the Next.js App Development Challenge!
