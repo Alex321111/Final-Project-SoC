@@ -3,7 +3,6 @@ import supabase from '../utils/supabase';
 import { useState } from 'react';
 import React from 'react';
 
-
 /*export default function ProjectForm() {
   const notify = () => toast('Wow so easy!');
   
@@ -59,9 +58,9 @@ import React from 'react';
     const handleAboutMeChange = (e) => {
       setAboutMe(e.target.value);
     };
-*/  
+*/
 
-        /*
+/*
         await supabase.public.project_feed({
           email,
           password,
@@ -78,10 +77,7 @@ import React from 'react';
           },
         });*/
 
-
-
-
-    /*const handleSubmit = async (e) => {
+/*const handleSubmit = async (e) => {
       e.preventDefault();
       const {
         username,
@@ -119,35 +115,33 @@ import React from 'react';
       }
     };*/
 
-    export default function ProjectForm() {
-      const [username, setUsername] = useState('');
-      const [teamName, setTeamName] = useState('');
-      const [githubProjectLink, setGithubProjectLink] = useState('');
-      const [projectDescription, setProjectDescription] = useState('');
-      const [presentationLink, setPresentationLink] = useState('');
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-        const { data, error } = await supabase
-          .from('project_feed')
-          .insert([
-            {
-              username: username,
-              team_name: teamName,
-              github_project_link: githubProjectLink,
-              project_description: projectDescription,
-              presentation_link: presentationLink
-            },
-          ]);
-        if (error) {
-          console.error('Error: ', error);
-        } else {
-          console.log('Success: ', data);
-        }
-      };
+export default function ProjectForm() {
+  const [username, setUsername] = useState('');
+  const [teamName, setTeamName] = useState('');
+  const [githubProjectLink, setGithubProjectLink] = useState('');
+  const [projectDescription, setProjectDescription] = useState('');
+  const [presentationLink, setPresentationLink] = useState('');
+  // this is the functionx
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { data, error } = await supabase.from('project_feed').insert([
+      {
+        username: username,
+        team_name: teamName,
+        github_project_link: githubProjectLink,
+        project_description: projectDescription,
+        presentation_link: presentationLink,
+      },
+    ]);
+    if (error) {
+      console.error('Error: ', error);
+    } else {
+      console.log('Success: ', data);
+    }
+  };
 
-
-return(
-      <div className="w-full md:w-1/2 py-10 px-5 md:px-10 bg-dark-2">
+  return (
+    <div className="w-full md:w-1/2 py-10 px-5 md:px-10 bg-dark-2">
       <div className="text-center mb-10">
         <h1 className="font-bold text-3xl text-indigo-500 mb-4">
           Submit your project
@@ -166,7 +160,7 @@ return(
                 className="w-full -ml-10  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                 placeholder="user87"
                 value={username}
-                onChange={e => setUsername(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
           </div>
@@ -180,7 +174,7 @@ return(
                 className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                 placeholder="Bunch of hacks"
                 value={teamName}
-                onChange={e => setTeamName(e.target.value)}
+                onChange={(e) => setTeamName(e.target.value)}
               />
             </div>
           </div>
@@ -194,7 +188,7 @@ return(
                 className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                 placeholder="https://github.com/user/repo"
                 value={githubProjectLink}
-                onChange={e => setGithubProjectLink(e.target.value)}
+                onChange={(e) => setGithubProjectLink(e.target.value)}
               />
             </div>
           </div>
@@ -208,7 +202,7 @@ return(
                 className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                 placeholder="https://youtube.com/demo"
                 value={presentationLink}
-                onChange={e => setPresentationLink(e.target.value)}
+                onChange={(e) => setPresentationLink(e.target.value)}
               />
             </div>
           </div>
@@ -221,18 +215,19 @@ return(
                 className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                 placeholder="Describe your project..."
                 value={projectDescription}
-                onChange={e => setProjectDescription(e.target.value)}
+                onChange={(e) => setProjectDescription(e.target.value)}
                 maxLength="200"
               />
             </div>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   );
 }
-
 
 /*
   return (
