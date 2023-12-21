@@ -30,7 +30,7 @@ const BottomBar = ({ userName }) => {
           <Link href="/teamchat" className="hover:text-primary-500">
             <FontAwesomeIcon icon={faUsers} size="lg" className="px-2" />
           </Link>
-          <Link href="/projectsubmission" className="hover:text-primary-500">
+          <Link href="/projectsubmissions" className="hover:text-primary-500">
             <FontAwesomeIcon icon={faRocket} size="lg" className="px-2" />
           </Link>
           <Link href="/pastprojects" className="hover:text-primary-500">
