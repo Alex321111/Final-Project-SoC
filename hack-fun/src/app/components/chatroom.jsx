@@ -76,7 +76,6 @@ const ChatRoom = ({ userName }) => {
         {
           message_content: newMessage,
           user_id: user.id,
-          username: user_profiles.username || 'Guest',
         },
       ]);
       if (error) {
@@ -114,6 +113,9 @@ const ChatRoom = ({ userName }) => {
   return (
     <div className="flex flex-col w-full flex-auto h-80 p-6">
       <div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-dark-1 h-full p-4">
+        <h2 className="m-auto pb-2">
+          Community chat <FontAwesomeIcon icon={faComments} className="px-2" />
+        </h2>
         <div className="flex flex-col h-full overflow-x-auto mb-4">
           <div className="flex flex-col h-full">
             <ul className="grid grid-cols-1 w-100% gap-y-2">
@@ -185,6 +187,8 @@ const ChatRoom = ({ userName }) => {
                     class="flex items-center h-10 w-full text-black rounded py-4 px-3 text-sm"
                     type="text"
                     placeholder="Type your message…"
+                    value={newMessage}
+                    onChange={handleNewMessageChange}
                   />
                   <button
                     type="submit"
