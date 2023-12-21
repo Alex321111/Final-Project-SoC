@@ -9,7 +9,7 @@ export default function HomeIntro({ userName }) {
           <div class="w-800  flex flex-col justify-center overflow-hidden bg-dark-2">
             <div class="absolute inset-0 bg-center dark:bg-dark-1"></div>
             <div class="group relative flex h-72 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
-            <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+              <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                 <img
                   src="https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=2700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"

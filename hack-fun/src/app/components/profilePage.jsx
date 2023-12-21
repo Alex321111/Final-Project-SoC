@@ -1,7 +1,7 @@
-import CustomAvatar from './Avatar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithubAlt } from '@fortawesome/free-solid-svg-icons';
-import AvatarUnmodified from '../components/AvatarUnmodified';
+import CustomAvatar from "./Avatar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubAlt } from "@fortawesome/free-solid-svg-icons";
+import AvatarUnmodified from "../components/AvatarUnmodified";
 import {
   faHouse,
   faCircleStop,
@@ -12,19 +12,19 @@ import {
   faRightFromBracket,
   faPowerOff,
   faGithub,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 export default function ProfilePage({ userName }) {
   return (
-    <div className="w-full  bg-dark-2 lg:w-4/12 px-4 py- lg:order-3 lg:text-right lg:self-center">
+    <div className="w-full bg-dark-2 lg:w-10/12 px-4 py- lg:order-3 lg:text-right lg:self-center ">
       <div>
         <div className="py-6 px-3 mt-12 sm:mt-0">
-          <button
+          {/* <button
             className="bg-indigo-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             Connect
             <FontAwesomeIcon icon={faGithub} />
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="flex justify-center items-center">
@@ -57,20 +57,30 @@ export default function ProfilePage({ userName }) {
             <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
               👋 Hey there, fellow hackers! I'm a passionate tech enthusiast and
               proud graduate of School of code, where I immersed myself in the
-              intricacies of coding, specializing in React and Next.ja. Now, as
-              an ex-bootcamper, I've joined this dynamic Hackathon community
-              with a mission to turn innovative ideas into tangible solutions.
+              intricacies of coding, specializing in React and Next.js.
+              <br></br>
+              <br></br>
+              Now, as an ex-bootcamper, I've joined this dynamic Hackathon
+              community with a mission to turn innovative ideas into tangible
+              solutions.
+              <br></br>
+              <br></br>
               I'm all about crafting sleek web applications, designing efficient
               algorithms, and exploring emerging technologies. I thrive on
               collaboration and believe in the power of diverse minds coming
-              together. Let's connect and code something extraordinary whether
-              you have a project idea, want to discuss the latest tech trends or
-              just geek out over coding challenges. Excited to be part of this
-              vibrant community, and looking forward to the collaborative coding
-              journey ahead! 🚀✨
+              together.
+              <br></br>
+              <br></br>
+              Let's connect and code something extraordinary whether you have a
+              project idea, want to discuss the latest tech trends or just geek
+              out over coding challenges.
+              <br></br>
+              <br></br>
+              Excited to be part of this vibrant community, and looking forward
+              to the collaborative coding journey ahead! 🚀✨
             </p>
             <a href="#pablo" className="font-normal text-pink-500">
-              Take to me to Github
+              Check out my Github!
             </a>
           </div>
         </div>
