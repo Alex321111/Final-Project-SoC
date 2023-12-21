@@ -3,6 +3,18 @@ import supabase from '../utils/supabase';
 import CustomAvatar from './Avatar';
 import AvatarUnmodified from './AvatarUnmodified';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHouse,
+  faCircleStop,
+  faComments,
+  faListCheck,
+  faDiagramProject,
+  faUser,
+  faRightFromBracket,
+  faPowerOff,
+  faPaperPlane,
+} from '@fortawesome/free-solid-svg-icons';
 const ChatRoom = ({ userName }) => {
   const [user, setUser] = useState(null);
   const [newMessage, setNewMessage] = useState('');
@@ -100,7 +112,7 @@ const ChatRoom = ({ userName }) => {
   // };
   //example 2
   return (
-    <div className="flex flex-col w-full flex-auto h-full p-6">
+    <div className="flex flex-col w-full flex-auto h-80 p-6">
       <div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-dark-1 h-full p-4">
         <div className="flex flex-col h-full overflow-x-auto mb-4">
           <div className="flex flex-col h-full">
@@ -114,11 +126,7 @@ const ChatRoom = ({ userName }) => {
                 >
                   {!message.sentByCurrentUser && (
                     <div className="flex items-center">
-                      <CustomAvatar
-                        size={30}
-                        variant="beam"
-                        username={user ? user.user_metadata?.username : 'Guest'}
-                      />
+                      <AvatarUnmodified username={'selam'} size={40} />
                       <span className="text-gray-600 ml-2">
                         {message.username}
                       </span>
@@ -144,7 +152,6 @@ const ChatRoom = ({ userName }) => {
                   </div>
                   {message.sentByCurrentUser && (
                     <div className="flex items-center ml-2">
-                      <AvatarUnmodified username={username} size={20} />
                       <span className="text-gray-600 ml-2">
                         {message.username}
                       </span>
@@ -155,11 +162,11 @@ const ChatRoom = ({ userName }) => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-row  mb-7 items-center">
+        <div className="flex flex-row mb-7 items-center">
           <div className="flex-grow ml-4">
             <div className="relative w-full">
               <form onSubmit={handleNewMessage}>
-                <div className="bg-dark-2 p-3 flex items-center justify-between">
+                {/* <div className="bg-dark-2 p-3 w-full flex items-center justify-between">
                   <input
                     type="text"
                     value={newMessage}
@@ -172,6 +179,18 @@ const ChatRoom = ({ userName }) => {
                     className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none"
                   >
                     Send
+                  </button> */}
+                <div class="bg-dark-1  p-2 gap-4 pb-6 flex w-full px-8 ">
+                  <input
+                    class="flex items-center h-10 w-full text-black rounded py-4 px-3 text-sm"
+                    type="text"
+                    placeholder="Type your message…"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none"
+                  >
+                    <FontAwesomeIcon icon={faPaperPlane} />
                   </button>
                 </div>
               </form>

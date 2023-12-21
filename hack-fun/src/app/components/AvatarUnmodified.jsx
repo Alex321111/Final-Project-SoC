@@ -70,9 +70,9 @@ const CustomAvatarUnmodified = ({
           marginRight: '10px',
         }}
       />
-      <div className="flex items-center justify-center">
+      {/* <div className="flex items-center justify-center">
         <p>{points}</p>
-      </div>
+      </div> */}
     </div>
   );
 };

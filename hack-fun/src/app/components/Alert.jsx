@@ -1,6 +1,6 @@
 const Alert = ({ message, type, onClose }) => (
   <div
-    className={`fixed top-0 bg-opacity-100 left-0 right-0 bg-${type}-900 text-center py-4 lg:px-4 bg-[#009b49]`}
+    className={`fixed top-0 bg-opacity-100 left-0 right-0 bg-${type}-900 text-center py-4 lg:px-4 bg-dark-2`}
   >
     <div
       className={`p-2 bg-${type}-800 items-center text-${type}-100 leading-none lg:rounded-full flex lg:inline-flex`}
