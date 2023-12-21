@@ -16,9 +16,11 @@ test('test', async ({ page }) => {
   expect(page.getByText('You have signed up !'));
   await page.getByRole('img', { name: 'Close' }).click();
   await page.getByRole('link', { name: 'Community chat' }).click();
+  expect(page.getByRole('button', { name: 'Send' }));
   await page.getByPlaceholder('Type your message here...').click();
   await page.getByPlaceholder('Type your message here...').click();
   await page.getByPlaceholder('Type your message here...').fill('hello again');
   await page.getByRole('button', { name: 'Send' }).click();
+  expect(page.locator('li').filter({ hasText: 'quinnlizzy12/21/2023, 3:05:34' }).getByRole('paragraph').nth(2));
   await page.getByRole('navigation').locator('div').filter({ hasText: 'HomeCommunity chatTeam' }).locator('div').nth(4).click();
 });
