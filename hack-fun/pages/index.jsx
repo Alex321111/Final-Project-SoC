@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { createClient } from '@supabase/supabase-js';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import '../styles/globals.css';
-import HackAFunLogo from '../src/app/components/hack-a-fun.png';
-import { Auth } from '@supabase/auth-ui-react';
-import SocLogo from '../src/app/components/take-three.png';
-import Link from 'next/link';
+import { createClient } from "@supabase/supabase-js";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import "../styles/globals.css";
+import HackAFunLogo from "../src/app/components/hack-a-fun.png";
+import { Auth } from "@supabase/auth-ui-react";
+import SocLogo from "../src/app/components/take-three.png";
+import Link from "next/link";
 import {
   // Import predefined theme
   ThemeSupa,
-} from '@supabase/auth-ui-shared';
+} from "@supabase/auth-ui-shared";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_URL,
@@ -21,15 +21,15 @@ const supabase = createClient(
 
 function SignInWithEmail() {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
-        if (event === 'SIGNED_IN') {
-          router.push('/home');
+        if (event === "SIGNED_IN") {
+          router.push("/home");
         } else {
-          router.push('/');
+          router.push("/");
         }
       }
     );
@@ -43,7 +43,7 @@ function SignInWithEmail() {
       });
 
       if (user) {
-        router.push('/home');
+        router.push("/home");
       } else {
         console.error(error);
       }
@@ -54,9 +54,16 @@ function SignInWithEmail() {
 
   return (
     <>
+      <title>Hackafun Login</title>
       <div className=" mt-4">
         <div className="flex flex-col items-center justfy-center">
-          <Image className="soc-logo" width={80} height={80} src={SocLogo} />
+          <Image
+            className="soc-logo"
+            width={80}
+            height={80}
+            src={SocLogo}
+            alt="Hackafun-logo"
+          />
         </div>
         {/* <section className="flex flex-col md:flex-grow p-4"> */}
         <div className="flex items-center justify-center">
@@ -113,7 +120,7 @@ function SignInWithEmail() {
       </div> */}
       <div className="bg-dark-2 px-5 py-5 pb-5 m-10 rounded-lg shadow-lg">
         <div className="flex justify-center">
-          {' '}
+          {" "}
           <form className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
             <div>
               <label htmlFor="email">Email</label>

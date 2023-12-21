@@ -1,14 +1,14 @@
-'use client';
-import '../styles/globals.css';
-import supabase from '../src/app/utils/supabase';
-import CustomAvatar from '../src/app/components/Avatar.jsx';
-import SocLogo from '../src/app/components/take-three.png';
-import HackAFunLogo from '../src/app/components/hack-a-fun.png';
-import Image from 'next/image';
-import { useState } from 'react';
-import AvatarUnmodified from '../src/app/components/AvatarUnmodified';
+"use client";
+import "../styles/globals.css";
+import supabase from "../src/app/utils/supabase";
+import CustomAvatar from "../src/app/components/Avatar.jsx";
+import SocLogo from "../src/app/components/take-three.png";
+import HackAFunLogo from "../src/app/components/hack-a-fun.png";
+import Image from "next/image";
+import { useState } from "react";
+import AvatarUnmodified from "../src/app/components/AvatarUnmodified";
 export default function Register() {
-  const [userName, setUserName] = useState<string>('');
+  const [userName, setUserName] = useState<string>("");
   const shouldRenderAvatar = false;
   const handleUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
@@ -30,15 +30,15 @@ export default function Register() {
       skills,
     } = Object.fromEntries(new FormData(e.currentTarget));
     if (
-      typeof email === 'string' &&
-      typeof password === 'string' &&
-      typeof username === 'string' &&
-      typeof name === 'string' &&
-      typeof about_me === 'string' &&
-      typeof linkedin_link === 'string' &&
-      typeof github_link === 'string' &&
-      typeof role_description === 'string' &&
-      typeof skills === 'string'
+      typeof email === "string" &&
+      typeof password === "string" &&
+      typeof username === "string" &&
+      typeof name === "string" &&
+      typeof about_me === "string" &&
+      typeof linkedin_link === "string" &&
+      typeof github_link === "string" &&
+      typeof role_description === "string" &&
+      typeof skills === "string"
     ) {
       await supabase.auth.signUp({
         email,
@@ -60,6 +60,7 @@ export default function Register() {
 
   return (
     <>
+      <title>Hackanfun Registration</title>;
       <section className="max-w-4xl p-6 mx-auto bg-indigo-500 rounded-md shadow-md  mt-20">
         <div className="flex items-center justify-center">
           <CustomAvatar size={50} username={userName} />
