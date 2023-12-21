@@ -8,6 +8,7 @@ const PastProjects = ({ userName }) => {
   // comment test
   return (
     <>
+      <title>Past Projects</title>;
       <div className="flex flex-col min-h-screen ">
         <div className="flex flex-grow h-full mb-20">
           <div className="left-side-bar">
@@ -22,7 +23,6 @@ const PastProjects = ({ userName }) => {
           </section>
         </div>
       </div>
-
       <div className="bottom-bar-container fixed bottom-0 w-full">
         <BottomBar userName={userName} />
       </div>
