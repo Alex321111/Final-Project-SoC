@@ -21,6 +21,7 @@ const HomeCard = dynamic(() => import('../src/app/components/HomeCard'), {
 });
 
 const Home = () => {
+  const notify = () => toast('Wow so easy!');
   const [userName, setUserName] = useState('');
   useEffect(() => {
     const { authListener } = supabase.auth.onAuthStateChange(
@@ -58,6 +59,10 @@ const Home = () => {
               <HomeIntro userName={userName} />
               <HomeCard />
             </section>
+            <button onClick={notify} className="p-7">
+              {' '}
+              Hello{' '}
+            </button>
           </div>
         </div>
       </div>
