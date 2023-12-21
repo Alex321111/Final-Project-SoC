@@ -6,9 +6,10 @@ import SocLogo from '../src/app/components/take-three.png';
 import HackAFunLogo from '../src/app/components/hack-a-fun.png';
 import Image from 'next/image';
 import { useState } from 'react';
+import AvatarUnmodified from '../src/app/components/AvatarUnmodified';
 export default function Register() {
   const [userName, setUserName] = useState<string>('');
-
+  const shouldRenderAvatar = false;
   const handleUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
     setUserName(value);
@@ -59,9 +60,9 @@ export default function Register() {
 
   return (
     <>
-      <section className="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md  mt-20">
+      <section className="max-w-4xl p-6 mx-auto bg-indigo-500 rounded-md shadow-md  mt-20">
         <div className="flex items-center justify-center">
-          <CustomAvatar size={40} username={userName} />
+          <CustomAvatar size={50} username={userName} />
         </div>
         <form
           className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 bg-dark-2 p-6"
