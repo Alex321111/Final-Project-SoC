@@ -5,7 +5,7 @@ import SocLogo from '../components/take-three.png';
 import Link from 'next/link';
 import Image from 'next/image';
 import supabase from '../utils/supabase';
-
+import Alert from '../components/Alert';
 import HomeIntro from './HomeIntro';
 
 import {
@@ -22,7 +22,13 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const HomeCard = () => {
   const [user, setUser] = useState(null);
-
+  const [alert, setAlert] = useState(false);
+  // function handleAlert() {
+  //   setAlert(true);
+  // }
+  function handleCloseAlert() {
+    setAlert(false);
+  }
   const projectDeadline = '2023-12-31T23:59:59';
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
@@ -46,6 +52,7 @@ const HomeCard = () => {
     } else {
       console.error('User is not authenticated');
     }
+    setAlert(true);
   };
 
   function CountDownTimer() {
@@ -164,6 +171,13 @@ const HomeCard = () => {
             >
               Sign Up
             </button>
+            {alert && (
+              <Alert
+                message={`You have signed up !`}
+                type="indigo"
+                onClose={handleCloseAlert}
+              />
+            )}
           </div>
         </div>
       </section>

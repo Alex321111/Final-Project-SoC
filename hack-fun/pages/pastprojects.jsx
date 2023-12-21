@@ -9,7 +9,7 @@ const PastProjects = ({ userName }) => {
   return (
     <>
       <div className="flex flex-col min-h-screen ">
-        <div className="flex flex-grow h-full">
+        <div className="flex flex-grow h-full mb-20">
           <div className="left-side-bar">
             <LeftSideBar userName={userName} />
           </div>
@@ -17,13 +17,13 @@ const PastProjects = ({ userName }) => {
           {/* <section className="flex items-center justify-center flex-col md:flex-grow">
             <ProjectCard />
           </section> */}
-          <section className="flex items-center justify-center flex-col md:flex-grow">
+          <section className="flex items-center justify-center flex-col md:flex-grow ">
             <ProjectCard />
           </section>
         </div>
       </div>
 
-      <div className="bottom-bar-container">
+      <div className="bottom-bar-container fixed bottom-0 w-full">
         <BottomBar userName={userName} />
       </div>
     </>

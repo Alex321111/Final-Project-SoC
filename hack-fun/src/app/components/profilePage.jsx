@@ -1,7 +1,7 @@
-import CustomAvatar from "./Avatar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithubAlt } from "@fortawesome/free-solid-svg-icons";
-import AvatarUnmodified from "../components/AvatarUnmodified";
+import CustomAvatar from './Avatar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubAlt } from '@fortawesome/free-solid-svg-icons';
+import AvatarUnmodified from '../components/AvatarUnmodified';
 import {
   faHouse,
   faCircleStop,
@@ -12,7 +12,7 @@ import {
   faRightFromBracket,
   faPowerOff,
   faGithub,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 export default function ProfilePage({ userName }) {
   return (
     <div className="w-full bg-dark-2 lg:w-10/12 px-4 py- lg:order-3 lg:text-right lg:self-center ">
@@ -55,23 +55,23 @@ export default function ProfilePage({ userName }) {
         <div className="flex flex-wrap justify-center">
           <div className="w-full lg:w-9/12 px-4">
             <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-              👋 Hey there, fellow hackers! I'm a passionate tech enthusiast and
+              👋 Hey there, fellow hackers! Im a passionate tech enthusiast and
               proud graduate of School of code, where I immersed myself in the
               intricacies of coding, specializing in React and Next.js.
               <br></br>
               <br></br>
-              Now, as an ex-bootcamper, I've joined this dynamic Hackathon
+              Now, as an ex-bootcamper, Ive joined this dynamic Hackathon
               community with a mission to turn innovative ideas into tangible
               solutions.
               <br></br>
               <br></br>
-              I'm all about crafting sleek web applications, designing efficient
+              Im all about crafting sleek web applications, designing efficient
               algorithms, and exploring emerging technologies. I thrive on
               collaboration and believe in the power of diverse minds coming
               together.
               <br></br>
               <br></br>
-              Let's connect and code something extraordinary whether you have a
+              Lets connect and code something extraordinary whether you have a
               project idea, want to discuss the latest tech trends or just geek
               out over coding challenges.
               <br></br>

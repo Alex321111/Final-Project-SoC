@@ -33,6 +33,6 @@
     "pages/groupchat.jsx",
     "src/app/components/Avatar.jsx",
     "src/app/components/SubmitProject.jsx"
-  ],
+, "src/app/components/ProjectForm.jsx"  ],
   "exclude": ["node_modules"]
 }

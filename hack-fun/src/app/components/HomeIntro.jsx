@@ -3,6 +3,7 @@ export default function HomeIntro({ userName }) {
     // <div
     //   class="bg-dark-2  p-4 m-5 rounded-lg shadow-lg"
     // >
+
     <div className="bg-dark-1 fit-content p-10 m-10 shadow-lg rounded-lg shadow-lg">
       <section>
         <div class="da relative w-full flex justify-center">
@@ -27,7 +28,9 @@ export default function HomeIntro({ userName }) {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+    //{" "}
+    // </div>
   );
 }

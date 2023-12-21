@@ -21,6 +21,7 @@ const HomeCard = dynamic(() => import('../src/app/components/HomeCard'), {
 });
 
 const Home = () => {
+  const notify = () => toast('Wow so easy!');
   const [userName, setUserName] = useState('');
   useEffect(() => {
     const { authListener } = supabase.auth.onAuthStateChange(
@@ -28,7 +29,6 @@ const Home = () => {
         const currentUser = session?.user;
         if (currentUser) {
           setUserName(currentUser.user_metadata?.username);
-          console.log(userName);
         } else {
           setUserName('Guest');
         }
@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen ">
+      <div className="flex flex-col min-h-screen overflow-hidden ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">
             <LeftSideBar userName={userName} />
@@ -47,7 +47,7 @@ const Home = () => {
             <section className="flex flex-col md:flex-grow">
               <div className="flex items-end justify-center ">
                 <Image
-                  className="hack-logo"
+                  className="hack-logo m-10"
                   width={380}
                   height={80}
                   src={HackAFunLogo}
