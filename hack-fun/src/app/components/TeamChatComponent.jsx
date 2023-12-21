@@ -13,6 +13,7 @@ import {
   faRightFromBracket,
   faPowerOff,
   faPaperPlane,
+  faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 // Function to fetch team ID
 
@@ -365,7 +366,7 @@ const TeamChatRoom = () => {
     <div className="flex flex-col w-full flex-auto h-80 p-6">
       <div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-dark-1 h-full p-4">
         <h2 className="m-auto pb-2">
-          Team chat <FontAwesomeIcon icon={faUser} className="px-2" />
+          Team chat <FontAwesomeIcon icon={faUsers} className="px-2" />
         </h2>
         <div className="flex flex-col h-full overflow-x-auto mb-4">
           <div className="flex flex-col h-full">

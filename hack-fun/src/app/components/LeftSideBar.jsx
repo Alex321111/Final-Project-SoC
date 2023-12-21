@@ -20,6 +20,7 @@ import {
   faListCheck,
   faDiagramProject,
   faUser,
+  faUsers,
   faRightFromBracket,
   faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
@@ -59,7 +60,7 @@ const LeftSideBar = ({ userName }) => {
           </Link>
           <Link href="/teamchat">
             <li className=" hover:bg-indigo-500  rounded-lg py-2 m-1">
-              <FontAwesomeIcon icon={faComments} className="px-2" />
+              <FontAwesomeIcon icon={faUsers} className="px-2" />
               Team chat
             </li>
           </Link>

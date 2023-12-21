@@ -1,6 +1,6 @@
 export default function HomeIntro({ userName }) {
   return (
-    <div className="bg-dark-1 fit-content p-10 m-10 shadow-lg rounded-lg">
+    <div className="bg-dark-1 fit-content px-6 mx-10 my-5 shadow-lg rounded-lg">
       <section>
         <div className="relative w-full flex justify-center">
           <div className="w-full flex flex-col justify-center overflow-hidden bg-dark-2">

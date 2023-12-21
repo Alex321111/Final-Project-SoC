@@ -90,9 +90,9 @@ const HomeCard = () => {
 
     return (
       <section>
-        <div className="bg-dark-2 p-10 m-10 shadow-lg rounded-lg shadow-lg">
-          <div className="bg-dark-2">
-            <div className="flex flex-col items-center justify-center w-full h-full gap-8 sm:gap-16">
+        <div className="bg-dark-2 p-7 pr-2 mb-8  shadow-lg rounded-lg shadow-lg">
+          <div className="bg-dark-2 ">
+            <div className="flex flex-col items-center justify-center w-full h-full gap-8  sm:gap-16">
               <span className="text-2xl bg-dark-2 sm:text-3xl font-semibold text-white text-center tracking-widest px-2">
                 Time left until project starts
               </span>
