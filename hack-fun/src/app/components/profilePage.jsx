@@ -1,7 +1,7 @@
-import CustomAvatar from './Avatar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithubAlt } from '@fortawesome/free-solid-svg-icons';
-import AvatarUnmodified from '../components/AvatarUnmodified';
+import CustomAvatar from "./Avatar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubAlt } from "@fortawesome/free-solid-svg-icons";
+import AvatarUnmodified from "../components/AvatarUnmodified";
 import {
   faHouse,
   faCircleStop,
@@ -12,7 +12,7 @@ import {
   faRightFromBracket,
   faPowerOff,
   faGithub,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 export default function ProfilePage({ userName }) {
   return (
     <div className="w-full bg-dark-2 lg:w-10/12 px-4 py- lg:order-3 lg:text-right lg:self-center ">
@@ -32,17 +32,11 @@ export default function ProfilePage({ userName }) {
       </div>
 
       <div className="text-center mt-12">
-        <h3 className="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-          {userName}
+        <h3 className="text-2xl font-semibold leading-normal text-blueGray-700 ">
+          {userName ? userName : "Jimmy John Jr"}
         </h3>
-        <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
-          <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
-          Bootcamp grad
-        </div>
-        <div className="mb-2 text-blueGray-600 mt-10">
-          <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-          Developer
-        </div>
+        <div className="mb-2 text-blueGray-600 mt-10 font-bold">Bootcamper</div>{" "}
+        {/*Find the role from data base and put conditional here*/}
         <div className="mb-2 text-blueGray-600">
           <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
           React | Node.js | JavaScript (ES6+) | HTML5 | CSS3 | Express.js |
@@ -51,7 +45,7 @@ export default function ProfilePage({ userName }) {
         </div>
       </div>
 
-      <div className="mt-8 py-10 border-t border-blueGray-200 text-center">
+      <div className="my-8 py-10 border-t border-blueGray-200 text-center">
         <div className="flex flex-wrap justify-center">
           <div className="w-full lg:w-9/12 px-4">
             <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
@@ -79,7 +73,7 @@ export default function ProfilePage({ userName }) {
               Excited to be part of this vibrant community, and looking forward
               to the collaborative coding journey ahead! 🚀✨
             </p>
-            <a href="#pablo" className="font-normal text-pink-500">
+            <a href="#pablo" className="font-bold text-pink-500">
               Check out my Github!
             </a>
           </div>
