@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import supabase from '../utils/supabase';
-import CustomAvatar from './Avatar';
-import AvatarUnmodified from './AvatarUnmodified';
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect } from "react";
+import supabase from "../utils/supabase";
+import CustomAvatar from "./Avatar";
+import AvatarUnmodified from "./AvatarUnmodified";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faCircleStop,
@@ -14,10 +14,10 @@ import {
   faRightFromBracket,
   faPowerOff,
   faPaperPlane,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 const ChatRoom = ({ userName }) => {
   const [user, setUser] = useState(null);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState([]);
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
@@ -33,12 +33,12 @@ const ChatRoom = ({ userName }) => {
   useEffect(() => {
     fetchMessages();
     const generalChat = supabase
-      .channel('custom-insert-channel')
+      .channel("custom-insert-channel")
       .on(
-        'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'general_chat' },
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "general_chat" },
         (payload) => {
-          console.log('Change received!', payload);
+          console.log("Change received!", payload);
           setMessages((prevMessages) => [...prevMessages, payload.new]);
         }
       )
@@ -56,11 +56,11 @@ const ChatRoom = ({ userName }) => {
     };*/
   const fetchMessages = async () => {
     const { data, error } = await supabase
-      .from('general_chat')
-      .select('*, user_profiles: user_id(username)')
-      .is('team_id', null); // Use the "is" operator to check for null values
+      .from("general_chat")
+      .select("*, user_profiles: user_id(username)")
+      .is("team_id", null); // Use the "is" operator to check for null values
     if (error) {
-      console.error('Error fetching messages: ', error);
+      console.error("Error fetching messages: ", error);
     } else {
       setMessages(data);
     }
@@ -70,18 +70,18 @@ const ChatRoom = ({ userName }) => {
   };
   const handleNewMessage = async (event) => {
     event.preventDefault();
-    if (newMessage.trim() === '') return;
+    if (newMessage.trim() === "") return;
     if (user) {
-      const { data, error } = await supabase.from('general_chat').insert([
+      const { data, error } = await supabase.from("general_chat").insert([
         {
           message_content: newMessage,
           user_id: user.id,
         },
       ]);
       if (error) {
-        console.error('Error inserting message: ', error);
+        console.error("Error inserting message: ", error);
       } else {
-        setNewMessage('');
+        setNewMessage("");
       }
     }
   };
@@ -123,12 +123,12 @@ const ChatRoom = ({ userName }) => {
                 <li
                   key={index}
                   className={`flex ${
-                    message.sentByCurrentUser ? 'justify-end' : 'justify-start'
+                    message.sentByCurrentUser ? "justify-end" : "justify-start"
                   }`}
                 >
                   {!message.sentByCurrentUser && (
                     <div className="flex items-center">
-                      <AvatarUnmodified username={'selam'} size={40} />
+                      <AvatarUnmodified username={"selam"} size={40} />
                       <span className="text-gray-600 ml-2">
                         {message.username}
                       </span>
@@ -143,8 +143,8 @@ const ChatRoom = ({ userName }) => {
                     <div
                       className={`flex items-center ${
                         message.sentByCurrentUser
-                          ? 'justify-center'
-                          : 'justify-start'
+                          ? "justify-center"
+                          : "justify-start"
                       }`}
                     >
                       <div className="bg-white p-4 rounded shadow">
@@ -184,7 +184,7 @@ const ChatRoom = ({ userName }) => {
                   </button> */}
                 <div class="bg-dark-1  p-2 gap-4 pb-6 flex w-full px-8 ">
                   <input
-                    class="flex items-center h-10 w-full text-black rounded py-4 px-3 text-sm"
+                    class="flex items-center h-10 w-full text-black rounded py-4 px-4 text-sm"
                     type="text"
                     placeholder="Type your message…"
                     value={newMessage}
