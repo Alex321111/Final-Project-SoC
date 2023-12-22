@@ -339,6 +339,7 @@ const TeamChatRoom = () => {
     const { data, error } = await supabase
       .from('general_chat')
       .select('*,user_profiles:user_id(username)')
+      .order('created_at', { ascending: true })
       .eq('team_id', teamId);
     if (error) console.error('Error fetching messages: ', error);
     else setMessages(data);
