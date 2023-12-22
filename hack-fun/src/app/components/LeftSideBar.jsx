@@ -1,13 +1,14 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import SocLogo from "../components/take-three.png";
-import Avatar from "./Avatar.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CustomAvatar from "./Avatar.jsx";
-import { createClient } from "@supabase/supabase-js";
-import { useRouter } from "next/navigation";
-import "../../../styles/globals.css";
+'use client';
+import Link from 'next/link';
+import Image from 'next/image';
+import SocLogo from '../components/take-three.png';
+import Avatar from './Avatar.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CustomAvatar from './Avatar.jsx';
+import { createClient } from '@supabase/supabase-js';
+import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import '../../../styles/globals.css';
 const supabase = createClient(
   process.env.NEXT_PUBLIC_URL,
   process.env.NEXT_PUBLIC_ANON_KEY
@@ -23,20 +24,51 @@ import {
   faUsers,
   faRightFromBracket,
   faPowerOff,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 const LeftSideBar = ({ userName }) => {
   const router = useRouter();
+  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState(null);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        const currentUser = session?.user;
+        setUser(currentUser);
+        setUsername(currentUser?.user_metadata?.username || 'Guest');
+      }
+    );
+  }, []);
+  useEffect(() => {
+    if (user) {
+      displayUsername();
+    }
+  }, [user]);
+  const displayUsername = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('user_profiles')
+      .select('username')
+      .eq('id', user.id);
+    if (error) {
+      console.error(error);
+    } else {
+      // Set the points state variable with the result
+      setUsername(data[0].username);
+      setLoading(false);
+    }
+  };
   async function handleSignOut() {
     try {
       const { error } = await supabase.auth.signOut();
       if (error) {
         throw error;
       }
-      console.log("Signed out successfully");
-      router.push("/");
+      console.log('Signed out successfully');
+      router.push('/');
     } catch (error) {
-      console.log("Your connection timed out", error.message);
+      console.log('Your connection timed out', error.message);
     }
   }
   return (
@@ -50,7 +82,7 @@ const LeftSideBar = ({ userName }) => {
         <ul className="py-4 px-3">
           <Link href="/home">
             <li className=" hover:bg-indigo-500 rounded-lg py-2 m-1">
-              {" "}
+              {' '}
               <FontAwesomeIcon icon={faHouse} className="px-2" /> Home
             </li>
           </Link>
@@ -75,19 +107,19 @@ const LeftSideBar = ({ userName }) => {
           <Link href="/pastprojects">
             <li className="py-3 hover:bg-indigo-500  rounded-lg py-2 m-1">
               <FontAwesomeIcon icon={faDiagramProject} className="px-2" />
-              Past projects{" "}
+              Past projects{' '}
             </li>
           </Link>
           <Link href="/profile">
             <li className="py-3 hover:bg-indigo-500 rounded-lg px-2">
               <FontAwesomeIcon icon={faUser} className="px-2" />
-              Profile{" "}
+              Profile{' '}
             </li>
           </Link>
         </ul>
         <div className="flex items-center ml-7">
-          <CustomAvatar size={30} variant="beam" username={userName} />
-          <span style={{ marginLeft: "1rem" }}>{userName}</span>
+          <CustomAvatar size={30} variant="beam" username={username} />
+          <span style={{ marginLeft: '1rem' }}>{userName}</span>
         </div>
         <div className="flex items-center justify-center hover:text-indigo-500 block mb-4 mr-10">
           <FontAwesomeIcon

@@ -235,7 +235,6 @@ export default function ProjectForm() {
                 Project description
               </label>
               <textarea
-                maxlength="200"
                 className="justify-start flex p-4 text-black w-full y-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                 placeholder="Describe your project..."
                 value={projectDescription}
