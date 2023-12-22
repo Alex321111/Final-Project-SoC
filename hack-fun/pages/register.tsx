@@ -1,14 +1,15 @@
-'use client';
-import '../styles/globals.css';
-import supabase from '../src/app/utils/supabase';
-import CustomAvatar from '../src/app/components/Avatar.jsx';
-import SocLogo from '../src/app/components/take-three.png';
-import HackAFunLogo from '../src/app/components/hack-a-fun.png';
-import Image from 'next/image';
-import { useState } from 'react';
+"use client";
+import "../styles/globals.css";
+import supabase from "../src/app/utils/supabase";
+import CustomAvatar from "../src/app/components/Avatar.jsx";
+import SocLogo from "../src/app/components/take-three.png";
+import HackAFunLogo from "../src/app/components/hack-a-fun.png";
+import Image from "next/image";
+import { useState } from "react";
+import AvatarUnmodified from "../src/app/components/AvatarUnmodified";
 export default function Register() {
-  const [userName, setUserName] = useState<string>('');
-
+  const [userName, setUserName] = useState<string>("");
+  const shouldRenderAvatar = false;
   const handleUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
     setUserName(value);
@@ -29,15 +30,15 @@ export default function Register() {
       skills,
     } = Object.fromEntries(new FormData(e.currentTarget));
     if (
-      typeof email === 'string' &&
-      typeof password === 'string' &&
-      typeof username === 'string' &&
-      typeof name === 'string' &&
-      typeof about_me === 'string' &&
-      typeof linkedin_link === 'string' &&
-      typeof github_link === 'string' &&
-      typeof role_description === 'string' &&
-      typeof skills === 'string'
+      typeof email === "string" &&
+      typeof password === "string" &&
+      typeof username === "string" &&
+      typeof name === "string" &&
+      typeof about_me === "string" &&
+      typeof linkedin_link === "string" &&
+      typeof github_link === "string" &&
+      typeof role_description === "string" &&
+      typeof skills === "string"
     ) {
       await supabase.auth.signUp({
         email,
@@ -59,9 +60,10 @@ export default function Register() {
 
   return (
     <>
-      <section className="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md  mt-20">
+      <title>Hackanfun Registration</title>;
+      <section className="max-w-4xl p-6 mx-auto bg-indigo-500 rounded-md shadow-md  mt-20">
         <div className="flex items-center justify-center">
-          <CustomAvatar size={40} username={userName} />
+          <CustomAvatar size={50} username={userName} />
         </div>
         <form
           className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 bg-dark-2 p-6"
@@ -77,14 +79,14 @@ export default function Register() {
             />
           </div>
           <div>
-             <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-dark-2 border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               type="password"
               id="password"
               name="password"
             />
-         </div>
+          </div>
           <div>
             <label htmlFor="username">Username</label>
             <input
@@ -136,18 +138,18 @@ export default function Register() {
         />
         
          </div> */}
-         <div>
-  <label htmlFor="role_description">Role</label>
-  <select 
-    id="role_description" 
-    name="role_description" 
-    className="block relative w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-  >
-    <option value="bootcamper">bootcamper</option>
-    <option value="exbootcamper">exbootcamper</option>
-    <option value="mentor">mentor</option>
-  </select>
-</div>
+          <div>
+            <label htmlFor="role_description">Role</label>
+            <select
+              id="role_description"
+              name="role_description"
+              className="block relative w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+            >
+              <option value="bootcamper">bootcamper</option>
+              <option value="exbootcamper">exbootcamper</option>
+              <option value="mentor">mentor</option>
+            </select>
+          </div>
           <div>
             <label htmlFor="about_me">About Me</label>
             <textarea
@@ -158,7 +160,7 @@ export default function Register() {
             ></textarea>
           </div>
           <div>
-          <label htmlFor="about_me">Skills</label>
+            <label htmlFor="about_me">Skills</label>
             <textarea
               className="justify-start flex block w-full mt-2 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               placeholder="Please give us a brief summary of your skills and the tech you have
@@ -168,10 +170,13 @@ export default function Register() {
             ></textarea>
           </div>
           <div className="flex items-center justify-center">
-          <button 
-          className="w-[150px] bg-indigo-500 h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
-         type="submit">Create an Account</button>
-         </div>
+            <button
+              className="w-[150px] bg-indigo-500 h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
+              type="submit"
+            >
+              Create an Account
+            </button>
+          </div>
         </form>
       </section>
     </>
@@ -302,5 +307,3 @@ export default function Register() {
       </div> */
   );
 }
-
-

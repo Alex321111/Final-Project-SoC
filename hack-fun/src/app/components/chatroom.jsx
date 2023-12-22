@@ -1,54 +1,60 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import supabase from "../utils/supabase";
 import CustomAvatar from "./Avatar";
 import AvatarUnmodified from "./AvatarUnmodified";
-const ChatRoom = () => {
-	const [user, setUser] = useState(null);
-	const [newMessage, setNewMessage] = useState("");
-	const [messages, setMessages] = useState([]);
-
-	useEffect(() => {
-		const { data: authListener } = supabase.auth.onAuthStateChange(
-			async (event, session) => {
-				const currentUser = session?.user;
-				setUser(currentUser);
-			}
-		);
-
-		// return () => {
-		// 	authListener.unsubscribe();
-		// };
-	}, []);
-
-	useEffect(() => {
-		fetchMessages();
-
-		const generalChat = supabase
-			.channel("custom-insert-channel")
-			.on(
-				"postgres_changes",
-				{ event: "INSERT", schema: "public", table: "general_chat" },
-				(payload) => {
-					console.log("Change received!", payload);
-					setMessages((prevMessages) => [...prevMessages, payload.new]);
-				}
-			)
-			.subscribe();
-
-		// return () => {
-		// 	supabase.removeSubscription(generalChat);
-		// };
-	}, []);
-
-	/*	const fetchMessages = async () => {
-		const { data, error } = await supabase
-		.from("general_chat")
-		.select("*");
-		if (error) console.error("Error fetching messages: ", error);
-		else setMessages(data);
-	};*/
-
-	const fetchMessages = async () => {
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faCircleStop,
+  faComments,
+  faListCheck,
+  faDiagramProject,
+  faUser,
+  faRightFromBracket,
+  faPowerOff,
+  faPaperPlane,
+} from "@fortawesome/free-solid-svg-icons";
+const ChatRoom = ({ userName }) => {
+  const [user, setUser] = useState(null);
+  const [newMessage, setNewMessage] = useState("");
+  const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        const currentUser = session?.user;
+        setUser(currentUser);
+      }
+    );
+    // return () => {
+    //  authListener.unsubscribe();
+    // };
+  }, []);
+  useEffect(() => {
+    fetchMessages();
+    const generalChat = supabase
+      .channel("custom-insert-channel")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "general_chat" },
+        (payload) => {
+          console.log("Change received!", payload);
+          setMessages((prevMessages) => [...prevMessages, payload.new]);
+        }
+      )
+      .subscribe();
+    // return () => {
+    //  supabase.removeSubscription(generalChat);
+    // };
+  }, []);
+  /*    const fetchMessages = async () => {
+        const { data, error } = await supabase
+        .from("general_chat")
+        .select("*");
+        if (error) console.error("Error fetching messages: ", error);
+        else setMessages(data);
+    };*/
+  const fetchMessages = async () => {
 		const { data, error } = await supabase
 			.from("general_chat")
 			.select("*, user_profiles: user_id(username)")
@@ -61,56 +67,52 @@ const ChatRoom = () => {
 		}
 	};
 
-	const handleNewMessageChange = (event) => {
-		setNewMessage(event.target.value);
-	};
-
-	const handleNewMessage = async (event) => {
-		event.preventDefault();
-
-		if (newMessage.trim() === "") return;
-
-		if (user) {
-			const { data, error } = await supabase
-				.from("general_chat")
-				.insert([{ message_content: newMessage, user_id: user.id }]);
-
-			if (error) {
-				console.error("Error inserting message: ", error);
-			} else {
-				setNewMessage("");
-			}
-		}
-	};
-
-	// 	return (
-	// 		<div>
-	// 			<ul>
-	// 				{messages.map((message, index) => (
-	// 					<li key={index}>
-	// 						<p>
-	// 							<strong>{message.username}</strong>: {message.message_content}
-	// 						</p>
-	// 						<p>{new Date(message.created_at).toLocaleString()}</p>
-	// 					</li>
-	// 				))}
-	// 			</ul>
-	// 			<form onSubmit={handleNewMessage}>
-	// 				<input
-	// 					type="text"
-	// 					value={newMessage}
-	// 					onChange={handleNewMessageChange}
-	// 					placeholder="Type your message here..."
-	// 				/>
-	// 				<button type="submit">Send</button>
-	// 			</form>
-	// 		</div>
-	// 	);
-	// };
-
-	//example 2
-
-	return (
+  const handleNewMessageChange = (event) => {
+    setNewMessage(event.target.value);
+  };
+  const handleNewMessage = async (event) => {
+    event.preventDefault();
+    if (newMessage.trim() === "") return;
+    if (user) {
+      const { data, error } = await supabase.from("general_chat").insert([
+        {
+          message_content: newMessage,
+          user_id: user.id,
+        },
+      ]);
+      if (error) {
+        console.error("Error inserting message: ", error);
+      } else {
+        setNewMessage("");
+      }
+    }
+  };
+  //    return (
+  //        <div>
+  //            <ul>
+  //                {messages.map((message, index) => (
+  //                    <li key={index}>
+  //                        <p>
+  //                            <strong>{message.username}</strong>: {message.message_content}
+  //                        </p>
+  //                        <p>{new Date(message.created_at).toLocaleString()}</p>
+  //                    </li>
+  //                ))}
+  //            </ul>
+  //            <form onSubmit={handleNewMessage}>
+  //                <input
+  //                    type="text"
+  //                    value={newMessage}
+  //                    onChange={handleNewMessageChange}
+  //                    placeholder="Type your message here..."
+  //                />
+  //                <button type="submit">Send</button>
+  //            </form>
+  //        </div>
+  //    );
+  // };
+  //example 2
+ return (
 		<div className="flex flex-col w-full flex-auto h-full p-6">
 			<div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-dark-1 h-full p-4">
 				<div className="flex flex-col h-full overflow-x-auto mb-4">
@@ -191,5 +193,4 @@ const ChatRoom = () => {
 		</div>
 	);
 };
-
 export default ChatRoom;

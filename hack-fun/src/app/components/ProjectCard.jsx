@@ -49,7 +49,7 @@ export default function ProjectCard({ userName }) {
             <img
               className="rounded-t-lg"
               src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="ReactProject"
+              alt="fetch-api-picture"
             />
           </a>
           <div className="p-5">
@@ -85,10 +85,10 @@ export default function ProjectCard({ userName }) {
             <img
               className="rounded-t-lg"
               src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
+              alt="nextjs-picture"
             />
           </a>
-          <div className="p-5">
+          <div className="p-5 sm:pb-20">
             <a href="https://docs.google.com/document/d/e/2PACX-1vRa4v7rAZWZpBs0R_kH_mPpPl788cY9wDILKJkJL6ieKrU2jtsK_9demcudSFDFSU5uAQ30TEM9ENt8/pub">
               <h5 className="text-blue-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">
                 Welcome to the Next.js App Development Challenge!

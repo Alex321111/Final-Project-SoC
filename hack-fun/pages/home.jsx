@@ -17,26 +17,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CountDownTimer from "../src/app/components/Countdown";
 import dynamic from "next/dynamic";
 const HomeCard = dynamic(() => import("../src/app/components/HomeCard"), {
-	ssr: false,
+  ssr: false,
 });
 
 const Home = () => {
-	const notify = () => toast("Wow so easy!");
-	const [userName, setUserName] = useState("");
-	useEffect(() => {
-		const { authListener } = supabase.auth.onAuthStateChange(
-			(event, session) => {
-				const currentUser = session?.user;
-				if (currentUser) {
-					setUserName(currentUser.user_metadata?.username);
-					console.log(userName);
-				} else {
-					setUserName("Guest");
-				}
-			}
-		);
-	}, []);
-	useEffect(() => {
+  const notify = () => toast("Wow so easy!");
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    const { authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        const currentUser = session?.user;
+        if (currentUser) {
+          setUserName(currentUser.user_metadata?.username);
+        } else {
+          setUserName("Guest");
+        }
+      }
+    );
+  }, []);
+useEffect(() => {
 		if (typeof window !== "undefined") {
 			if (sessionStorage.getItem("justLoggedIn")) {
 				sessionStorage.removeItem("justLoggedIn"); // Clear the flag
@@ -44,44 +43,37 @@ const Home = () => {
 			}
 		}
 	}, []);
+  return (
+    <>
+      <title>Hackafun Home</title>
+      <div className="flex flex-col min-h-screen overflow-hidden ">
+        <div className="flex flex-grow h-full">
+          <div className="left-side-bar">
+            <LeftSideBar userName={userName} />
+          </div>
+          <div className="flex flex-col flex-grow">
+            <section className="flex flex-col md:flex-grow">
+              <div className="flex items-end justify-center ">
+                <Image
+                  className="hack-logo m-10"
+                  width={380}
+                  height={80}
+                  src={HackAFunLogo}
+                  alt="hack-a-fun-logo"
+                />
+              </div>
 
-	return (
-		<>
-			<div className="flex flex-col min-h-screen ">
-				<div className="flex flex-grow h-full">
-					<div className="left-side-bar">
-						<LeftSideBar userName={userName} />
-					</div>
-					<div className="flex flex-col flex-grow">
-						<section className="flex flex-col md:flex-grow">
-							<div className="flex items-end justify-center ">
-								<Image
-									className="hack-logo"
-									width={380}
-									height={80}
-									src={HackAFunLogo}
-									alt="hack-a-fun-logo"
-								/>
-							</div>
-
-							<HomeIntro userName={userName} />
-							<HomeCard />
-						</section>
-						<button
-							onClick={notify}
-							className="p-7">
-							{" "}
-							Hello{" "}
-						</button>
-					</div>
-				</div>
-			</div>
-
-			<div className="bottom-bar-container">
-				<BottomBar userName={userName} />
-			</div>
-		</>
-	);
+              <HomeIntro userName={userName} />
+              <HomeCard />
+            </section>
+          </div>
+        </div>
+      </div>
+      <div className="bottom-bar-container">
+        <BottomBar userName={userName} />
+      </div>
+    </>
+  );
 };
 
 export default Home;

@@ -7,7 +7,7 @@ const Alert = ({ message, type, onClose }) => (
       role="alert"
     >
       <span
-        className={`flex rounded-full bg-${type}-500 uppercase px-2 py-1 text-xs font-bold mr-3`}
+        className={`flex rounded-full bg-yellow-500 uppercase px-2 py-1 text-xs font-bold mr-3`}
       >
         New
       </span>
