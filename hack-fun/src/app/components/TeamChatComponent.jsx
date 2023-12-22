@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import supabase from "../utils/supabase";
-import CustomAvatar from "./Avatar";
-import AvatarUnmodified from "./AvatarUnmodified";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from 'react';
+import supabase from '../utils/supabase';
+import CustomAvatar from './Avatar';
+import AvatarUnmodified from './AvatarUnmodified';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouse,
   faCircleStop,
@@ -14,7 +14,7 @@ import {
   faPowerOff,
   faPaperPlane,
   faUsers,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 // Function to fetch team ID
 
 /*async function fetchTeamId(userId) {
@@ -294,7 +294,7 @@ async function fetchTeamMessages(teamId) {
 
 const TeamChatRoom = () => {
   const [user, setUser] = useState(null);
-  const [newMessage, setNewMessage] = useState("");
+  const [newMessage, setNewMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [teamId, setTeamId] = useState(null);
   useEffect(() => {
@@ -304,12 +304,12 @@ const TeamChatRoom = () => {
         setUser(currentUser);
         if (currentUser) {
           const { data, error } = await supabase
-            .from("all_teams")
-            .select("team_id")
-            .eq("user_id", currentUser.id)
+            .from('all_teams')
+            .select('team_id')
+            .eq('user_id', currentUser.id)
             .single();
           if (error) {
-            console.error("Error fetching team ID:", error);
+            console.error('Error fetching team ID:', error);
             return;
           }
           setTeamId(data.team_id);
@@ -321,12 +321,12 @@ const TeamChatRoom = () => {
     if (teamId) {
       fetchMessages();
       const generalChat = supabase
-        .channel("general_chat")
+        .channel('general_chat')
         .on(
-          "postgres_changes",
-          { event: "INSERT", schema: "public", table: "general_chat" },
+          'postgres_changes',
+          { event: 'INSERT', schema: 'public', table: 'general_chat' },
           (payload) => {
-            console.log("Change received!", payload);
+            console.log('Change received!', payload);
             if (payload.new.team_id === teamId) {
               setMessages((prevMessages) => [...prevMessages, payload.new]);
             }
@@ -337,10 +337,10 @@ const TeamChatRoom = () => {
   }, [teamId]);
   const fetchMessages = async () => {
     const { data, error } = await supabase
-      .from("general_chat")
-      .select("*")
-      .eq("team_id", teamId);
-    if (error) console.error("Error fetching messages: ", error);
+      .from('general_chat')
+      .select('*,user_profiles:user_id(username)')
+      .eq('team_id', teamId);
+    if (error) console.error('Error fetching messages: ', error);
     else setMessages(data);
   };
   const handleNewMessageChange = (event) => {
@@ -348,17 +348,17 @@ const TeamChatRoom = () => {
   };
   const handleNewMessage = async (event) => {
     event.preventDefault();
-    if (newMessage.trim() === "") return;
+    if (newMessage.trim() === '') return;
     if (user && teamId) {
       const { data, error } = await supabase
-        .from("general_chat")
+        .from('general_chat')
         .insert([
           { message_content: newMessage, user_id: user.id, team_id: teamId },
         ]);
       if (error) {
-        console.error("Error inserting message: ", error);
+        console.error('Error inserting message: ', error);
       } else {
-        setNewMessage("");
+        setNewMessage('');
       }
     }
   };
@@ -375,14 +375,28 @@ const TeamChatRoom = () => {
                 <li
                   key={index}
                   className={`flex ${
-                    message.sentByCurrentUser ? "justify-end" : "justify-start"
+                    message.sentByCurrentUser ? 'justify-end' : 'justify-start'
                   }`}
                 >
                   {!message.sentByCurrentUser && (
-                    <div className="flex items-center">
-                      <AvatarUnmodified username={"selam"} size={40} />
-                      <span className="text-gray-600 ml-2">
-                        {message.username}
+                    <div className="flex flex-col  items-center px-2  ">
+                      <div className="pr-8">
+                        <AvatarUnmodified
+                          className=" pr-10"
+                          size={30}
+                          variant="beam"
+                          username={
+                            message.user_profiles
+                              ? message.user_profiles.username
+                              : 'anonymous'
+                          }
+                        />
+                      </div>
+
+                      <span className="text-white-600 text-xs mr-5 ">
+                        {message.user_profiles
+                          ? message.user_profiles.username
+                          : 'anonymous'}
                       </span>
                     </div>
                   )}
@@ -394,7 +408,7 @@ const TeamChatRoom = () => {
                     </div>
                     <div
                       className={`flex items-center ${
-                        message.user ? "justify-center" : "justify-start"
+                        message.user ? 'justify-center' : 'justify-start'
                       }`}
                     >
                       <div className="bg-white p-4 rounded shadow">
