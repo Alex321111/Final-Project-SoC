@@ -1,7 +1,7 @@
-import CustomAvatar from "./Avatar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithubAlt } from "@fortawesome/free-solid-svg-icons";
-import AvatarUnmodified from "../components/AvatarUnmodified";
+import CustomAvatar from './Avatar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubAlt } from '@fortawesome/free-solid-svg-icons';
+import AvatarUnmodified from '../components/AvatarUnmodified';
 import {
   faHouse,
   faCircleStop,
@@ -12,7 +12,7 @@ import {
   faRightFromBracket,
   faPowerOff,
   faGithub,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 export default function ProfilePage({ userName }) {
   return (
     <div className="w-full bg-dark-2 lg:w-10/12 px-4 py- lg:order-3 lg:text-right lg:self-center ">
@@ -33,9 +33,9 @@ export default function ProfilePage({ userName }) {
 
       <div className="text-center mt-12">
         <h3 className="text-2xl font-semibold leading-normal text-blueGray-700 ">
-          {userName ? userName : "Jimmy John Jr"}
+          {userName ? userName : 'Jimmy John Jr'}
         </h3>
-        <div className="mb-2 text-blueGray-600 mt-10 font-bold">Bootcamper</div>{" "}
+        <div className="mb-2 text-blueGray-600 mt-10 font-bold">Bootcamper</div>{' '}
         {/*Find the role from data base and put conditional here*/}
         <div className="mb-2 text-blueGray-600">
           <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
