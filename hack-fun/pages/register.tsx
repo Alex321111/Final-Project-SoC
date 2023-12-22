@@ -60,7 +60,7 @@ export default function Register() {
 
   return (
     <>
-      <title>Hackanfun Registration</title>;
+      <title>Hackanfun Registration</title>
       <section className="max-w-4xl p-6 mx-auto bg-indigo-500 rounded-md shadow-md  mt-20">
         <div className="flex items-center justify-center">
           <CustomAvatar size={50} username={userName} />
