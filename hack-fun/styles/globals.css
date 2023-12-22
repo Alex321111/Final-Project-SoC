@@ -1,15 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
   @apply box-border list-none p-0 m-0 scroll-smooth;
 }
 body {
   @apply bg-dark-1 text-white min-h-screen font-inter;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
+
 .left-side-bar {
   @apply hidden md:flex px-4 py-0 flex-col m-0 min-h-screen justify-between min-w-[270px] bg-dark-2;
 }
