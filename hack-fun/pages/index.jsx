@@ -10,13 +10,13 @@ import { Auth } from "@supabase/auth-ui-react";
 import SocLogo from "../src/app/components/take-three.png";
 import Link from "next/link";
 import {
-  // Import predefined theme
-  ThemeSupa,
+	// Import predefined theme
+	ThemeSupa,
 } from "@supabase/auth-ui-shared";
 
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_URL,
-  process.env.NEXT_PUBLIC_ANON_KEY
+	process.env.NEXT_PUBLIC_URL,
+	process.env.NEXT_PUBLIC_ANON_KEY
 );
 
 function SignInWithEmail() {
