@@ -8,7 +8,7 @@ import BottomBar from "../src/app/components/BottomBar";
 const TeamChat = ({ userName }) => {
   return (
     <>
-      <title>Team Chat</title>;
+      <title>Team Chat</title>
       <div className="flex flex-col min-h-screen ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">

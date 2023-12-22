@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
     <>
-      <title>Hackafun Home</title>;
+      <title>Hackafun Home</title>
       <div className="flex flex-col min-h-screen overflow-hidden ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">

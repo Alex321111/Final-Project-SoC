@@ -25,7 +25,8 @@ export default function UserProfile({ userName }) {
 
   return (
     <>
-      <title>Profile</title>;<div className="project-profile"></div>
+      <title>Profile</title>
+      <div className="project-profile"></div>
       <div className="flex flex-col min-h-screen ">
         <div className="flex flex-grow h-full">
           <div className="left-side-bar">
