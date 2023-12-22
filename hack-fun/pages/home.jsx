@@ -36,6 +36,14 @@ const Home = () => {
 			}
 		);
 	}, []);
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			if (sessionStorage.getItem("justLoggedIn")) {
+				sessionStorage.removeItem("justLoggedIn"); // Clear the flag
+				window.location.reload();
+			}
+		}
+	}, []);
 
 	return (
 		<>
