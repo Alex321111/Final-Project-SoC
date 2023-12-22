@@ -31,12 +31,14 @@ export default function ProfilePage({ userName }) {
         <AvatarUnmodified userName={userName} />
       </div>
 
-      <div className="text-center mt-12">
-        <h3 className="text-2xl font-semibold leading-normal text-blueGray-700 ">
+      <div className="text-center flex flex-col mt-12">
+        <h3 className="text-2xl font-semibold leading-normal text-blueGray-700 mb-2">
           {userName ? userName : 'Jimmy John Jr'}
         </h3>
+        <div className="text-sm px-2 py-1 w-20 bg-indigo-200 m-auto text-indigo-800 rounded-full">
+          + 500
+        </div>
         <div className="mb-2 text-blueGray-600 mt-10 font-bold">Bootcamper</div>{' '}
-        {/*Find the role from data base and put conditional here*/}
         <div className="mb-2 text-blueGray-600">
           <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
           React | Node.js | JavaScript (ES6+) | HTML5 | CSS3 | Express.js |
