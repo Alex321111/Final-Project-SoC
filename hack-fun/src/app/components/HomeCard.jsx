@@ -29,7 +29,7 @@ const HomeCard = () => {
   function handleCloseAlert() {
     setAlert(false);
   }
-  const projectDeadline = '2023-12-31T23:59:59';
+  const projectDeadline = '2024-02-31T23:59:59';
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
@@ -89,12 +89,15 @@ const HomeCard = () => {
     }, [timeLeft, calculateTimeLeft]);
 
     return (
-      <section>
-        <div className="bg-dark-2 p-6 md:p-1 md:w-full mb-8 md:w-full  md:ml-2 md:p-0 rounded-lg shadow-lg">
+      <section className="flex justify-center">
+        <div
+          id="homeCard"
+          className=" bg-dark-2 lg:py-14 lg:px-9  mb-8 py-9 md:w-30  md:ml-2  rounded-lg shadow-lg"
+        >
           <div className="bg-dark-2 ">
             <div className="flex flex-col items-center justify-center w-full h-full gap-8  sm:gap-16">
               <span className="text-2xl bg-dark-2 sm:text-3xl font-semibold text-white text-center tracking-widest px-2">
-                Time left until project starts
+                Countdown to the Next Hackathon 🚀
               </span>
               {timeLeft?.days > 0 && (
                 <div className="flex justify-center gap-3 sm:gap-8">
@@ -162,7 +165,7 @@ const HomeCard = () => {
               Sign up to take part in this months project
             </h2>
             <Link
-              href="/profile"
+              href="https://docs.google.com/document/d/e/2PACX-1vRa4v7rAZWZpBs0R_kH_mPpPl788cY9wDILKJkJL6ieKrU2jtsK_9demcudSFDFSU5uAQ30TEM9ENt8/pub"
               className="text-indigo-500 text-center hover:text-yellow-500"
             >
               Read more 🚀
@@ -178,7 +181,7 @@ const HomeCard = () => {
             </button>
             {alert && (
               <Alert
-                message={`You have signed up !`}
+                message={`Thanks for signing up! You'll be joining your team shortly. 🚀`}
                 type="indigo"
                 onClose={handleCloseAlert}
               />

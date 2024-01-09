@@ -13,6 +13,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+          rel="icon"
+          href="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/external-hack-encryption-xnimrodx-lineal-gradient-xnimrodx.png"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

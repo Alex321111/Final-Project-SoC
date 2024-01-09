@@ -13,6 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="icon" href="/hack-fun/src/app/icons8-game-maker.svg" />
+      </head>
       <body>{children}</body>
     </html>
   );

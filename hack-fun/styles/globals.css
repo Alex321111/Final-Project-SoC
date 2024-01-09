@@ -26,6 +26,13 @@ body {
 .avatar-side {
   @apply h-3 w-3 rounded-full;
 }
+#homeCard {
+  max-width: 85vw;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .msger {
   display: flex;
   flex-flow: column wrap;
