@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubAlt } from '@fortawesome/free-solid-svg-icons';
 import AvatarUnmodified from '../components/AvatarUnmodified';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import supabase from '../utils/supabase';
 import {
   faHouse,
@@ -14,6 +15,7 @@ import {
   faRightFromBracket,
   faPowerOff,
   faGithub,
+  faUserPen,
 } from '@fortawesome/free-solid-svg-icons';
 export default function ProfilePage({ userName }) {
   const [session, setSession] = useState(null);
@@ -70,17 +72,13 @@ export default function ProfilePage({ userName }) {
 
   return (
     <div className="w-full p-t-8 bg-dark-2 lg:w-10/12 px-4 py- lg:order-3 lg:text-right lg:self-center ">
-      <div>
-        <div className="py-6 px-3 mt-12 sm:mt-0">
-          {/* <button
-            className="bg-indigo-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
-            type="button"
-          >
-            Connect
-            <FontAwesomeIcon icon={faGithub} />
-          </button> */}
-        </div>
-      </div>
+      <div></div>
+      <Link href="/editprofile">
+        <FontAwesomeIcon
+          className="pr-4 pt-5  text-indigo-200 "
+          icon={faUserPen}
+        />
+      </Link>
       <div className="flex justify-center items-center">
         <AvatarUnmodified username={username} />
       </div>

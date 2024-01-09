@@ -3,7 +3,7 @@ import Footer from '../src/app/components/Footer';
 import Header from '../src/app/components/Header';
 import BottomBar from '../src/app/components/BottomBar';
 import supabase from '../src/app/utils/supabase';
-import AccountForm from '../src/app/components/AccountForm';
+
 import { useState, useEffect } from 'react';
 import '../styles/globals.css';
 import ProfilePage from '../src/app/components/profilePage';
