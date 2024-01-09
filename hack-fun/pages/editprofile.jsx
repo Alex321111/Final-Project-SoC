@@ -107,7 +107,7 @@ function AccountForm() {
             placeholder="Full Name"
           />
         </div>
-        <div className="text-gray-900">
+        <div className="text-white">
           <label htmlFor="name">User name </label>
           <input
             type="text-gray-900"
