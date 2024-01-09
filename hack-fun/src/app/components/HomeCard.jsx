@@ -29,7 +29,7 @@ const HomeCard = () => {
   function handleCloseAlert() {
     setAlert(false);
   }
-  const projectDeadline = '2024-02-31T23:59:59';
+  const projectDeadline = '2024-02-08T23:59:59';
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
